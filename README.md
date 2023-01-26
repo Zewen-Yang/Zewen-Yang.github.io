@@ -1,7 +1,7 @@
 # ZewenYang Portfolio
 
 
-This repository is for my **personal portfolio only** and is separate from my regularly used account where you can find other repositories.
+This repository contains my **entire web-based portfolio** and is distinct from my main account where other repositories are located.
 
 For additional repositories, please visit my other account: 
 
