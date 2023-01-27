@@ -1,7 +1,7 @@
 # ZewenYang Portfolio
 
 
-This repository contains my **entire web-based portfolio** and is distinct from my main account where other repositories are located.
+This account contains my **entire web-based portfolio** and is distinct from the main one, where other repositories are located.
 
 For additional repositories, please visit my other account: 
 
