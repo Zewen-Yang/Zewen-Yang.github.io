@@ -1276,7 +1276,14 @@ input[type="radio"] + label:before {
     top: 0.25em;
    }
     .image.left60 img {
-      width: 220px; }  
+      width: 220px; }
+  .image.left80 {
+    float: left;
+    padding: 0em 1.5em 1em 0em;
+    top: 0.25em;
+   }
+    .image.left80 img {
+      width: 400px; }   
       
 
 a.image {
