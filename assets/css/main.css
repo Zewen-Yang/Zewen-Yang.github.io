@@ -2323,3 +2323,58 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+    .timeline {
+      list-style-type: none;
+      padding: 0;
+      position: relative;
+      margin-top: 20px;
+    }
+    
+    .timeline:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 40px;
+      width: 2px;
+      background-color: #ccc;
+      margin-left: -1px;
+    }
+    
+    .timeline li {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .timeline li:before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 2px solid #ccc;
+    }
+    
+    .timeline li .timeline-content {
+      margin-left: 60px;
+      background: #f2f2f2;
+      padding: 20px;
+      border-radius: 6px;
+      position: relative;
+    }
+    
+    /* .timeline li .timeline-content:before {
+      content: '';
+      position: absolute;
+      top: 26px;
+      right: -15px;
+      border-top: 15px solid transparent;
+      border-left: 15px solid #f2f2f2;
+      border-right: 0 solid #f2f2f2;
+      border-bottom: 15px solid transparent;
+    } */
+    
