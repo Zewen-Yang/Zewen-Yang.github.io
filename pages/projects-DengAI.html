@@ -5,7 +5,7 @@
 		<title>Projects - Zewen Yang</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -32,7 +32,7 @@
 										<h1>Projects</h1>
 									</header>
 									
-									<span class="image fit"><img src="images/project2.jpg" alt="" /></span>
+									<span class="image fit"><img src="../images/project2.jpg" alt="" /></span>
 									
 									<!-- <div class="col-6 col-12-medium">
 										<ul class="actions fit small">
@@ -63,51 +63,69 @@
 									<div style="display:flex">
 										<p style="margin:0; margin-right:10px">Extracurricur Projects:</p>
 										<ul class="actions small">
-											<li><a href="projects-MiniPlant.html#MiniPlant" class="button primary small">Mini-Plant</a></li>
+											<li><a href="projects3.html#MiniPlant" class="button primary small">Mini-Plant</a></li>
 										</ul>
 									</div>
 
-
-										
-
 									<hr class="major" />
-									<a id="REHYB"></a>
-									<h2>REHYB</h2>
-									<p><span class="image left60"><img src="images/REHYB_logo_small3.svg" alt="" /></span>
-									REHYB — <b>Rehabilitation Based on Hybrid Neuroprosthesis</b> — 
-									will develop a hybrid upper-limb exoskeleton that uses its own sensing and novel actuation capabilities for generating the digital twin of the user. 
-									The ReHyb project founded from the Horizon 2020 Framework Programme of the European Union with <b>7 million €</b>, envisions a new cognitive rehabilitation system based on a digital user model obtained 
-									through a novel communication capability of multi-modal sensing and actuation techniques from exoskeleton and functional electrical stimulation (FES).
+									<a id="dangai"></a>
+									<h2>DangAI</h2>
+									<p><span class="image left60"><img src="../images/dengai.png" alt="" /></span>
+										DangAI — <b>Predicting Disease Spread</b> — predict the number of dengue cases each week (in each location) based on environmental variables describing changes in temperature, precipitation, vegetation, and more.
+										Dengue fever is a mosquito-borne disease that occurs in tropical and sub-tropical parts of the world. In mild cases, symptoms are similar to the flu: fever, rash, and muscle and joint pain. 
+										In severe cases, dengue fever can cause severe bleeding, low blood pressure, and even death. See more about the <a href="https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/">competition project</a>. 
 									</p>
-									<p> 
-									   Our mission is to develop an upper-limb exoskeleton to allow elderly to maintain a healthy and active living environment. <a href="https://rehyb.eu/">Read and view more</a>.</p>
+									<p>Accurate dengue predictions would help public health workers and people around the world take steps to reduce the impact of these epidemics. </p>
 									
-									<h4>Reaearch Assistant</h4>
+									<h4>Data Scientist</h4>
 									<ul>
-										<li>Detected the abnormal movements through Deep Neural Networks using sensors, e.g., EMG</li>
-										<li>Studied the safe control of human muscles by FES to achieve functional movements</li>
-										<li></li>					
-									</ul>	
+										<li>Raw data analysis, data processing, feature engineering.</li>
+										<ul class="a">
+											<li> Process the data while cleaning the data, e.g. split cities
+												<div style="display: flex;">
+													<span class="image left80"><img src="../images/dengai_citycases.png" alt=""/></span>
+													<span class="image left80"><img src="../images/dengai_twocitycases.png" alt=""/></span>
+												</div>
+												or eliminate outliers comparing with the test data set
+												<div style="display: flex;">
+													<span class="image left80"><img src="../images/dengai_maxtem.png" alt=""/></span>
+													<span class="image left80"><img src="../images/dengai_meanDtem.png" alt=""/></span>
+												</div>
+											</li>
+											
+											<li>
+												Create new features or ensemble the features, e.g. encode weeks into seasons
+												<div style="display: flex;">
+													<span class="image left80"><img src="../images/dengai_meantem_sj.png" alt=""/></span>
+													<span class="image left80"><img src="../images/dengai_meantem_iq.png" alt=""/></span>
+												</div>
+											</li>					
+										</ul>
+										<li>Model training with Linear Regression (based line), XGboost, LSTM, etc.</li>
+										<li>Model comparison with MLflow.</li>					
+									</ul>
+
+									
 
 									
 									
 
-										<ul class="pagination">
-											<li><a href="projects-6GLife.html" class="button">Prev</a></li>
-											<li><a href="projects-DengAI.html" class="page">1</a></li>
+									<ul class="pagination">
+											<li><span class="button disabled">Prev</span></li>
+											<li><a href="projects-DengAI.html" class="page active">1</a></li>
 											<li><a href="projects-HarryPotter.html" class="page">2</a></li>
 											<li><a href="projects-AutoFashion.html" class="page">3</a></li>
 											<li><a href="projects-SeaClear.html" class="page">4</a></li>
 											<li><a href="projects-COVEMAS.html" class="page">5</a></li>
 											<li><a href="projects-6GLife.html" class="page">6</a></li>
-											<li><a href="projects-REHYB.html" class="page active">7</a></li>
+											<li><a href="projects-REHYB.html" class="page">7</a></li>
 											<li><a href="projects-PI.html" class="page">8</a></li>
 											<li><a href="projects-AUV.html" class="page">9</a></li>
 											<li><a href="projects-MultiAUV.html" class="page">10</a></li>
 											<li><a href="projects-MiniPlant.html" class="page">11</a></li>
 											<li><a href="#" class="page">12</a></li>
-											<li><a href="projects-PI.html" class="button">Next</a></li>
-									</ul>
+											<li><a href="projects-HarryPotter.html" class="button">Next</a></li>
+									</ul>	
 									
 
 						</div>
@@ -130,8 +148,9 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Home</a></li>
+										<li><a href="../index.html">Home</a></li>
 										<li><a href="biography.html">Biography</a></li>
+										<li><a href="curriculumVitae.html">Curriculum Vitae</a></li>
 										<li><a href="projects-DengAI.html">Projects</a></li>
 										<li><a href="research.html">Research</a></li>
 										<li>
@@ -143,16 +162,18 @@
 												<li><a href="publication-services.html">Acadmic Services</a></li>
 											</ul>
 										</li>
+										<li><a href="achievements.html">Achievements</a></li>
+										<li><a href="life.html">Life</a></li>
 										<li>
 											<span class="opener">More</span>
 											<ul>
-												<li><a href="papers.html">Read</a></li>
-												<li><a href="patents.html">Resources</a></li>
+												<li><a href="read.html">Read</a></li>
+												<li><a href="resources.html">Resources</a></li>
 											</ul>
 										</li>
-										<li><a href="elements.html">Elements</a></li>
 									</ul>
 								</nav>
+
 								
 
 							<!-- Section -->
@@ -207,11 +228,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

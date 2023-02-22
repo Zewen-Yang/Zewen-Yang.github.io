@@ -5,7 +5,7 @@
 		<title>Projects - Zewen Yang</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -32,7 +32,7 @@
 										<h1>Projects</h1>
 									</header>
 									
-									<span class="image fit"><img src="images/project2.jpg" alt="" /></span>
+									<span class="image fit"><img src="../images/project2.jpg" alt="" /></span>
 									
 									<!-- <div class="col-6 col-12-medium">
 										<ul class="actions fit small">
@@ -68,39 +68,48 @@
 									</div>
 
 
-										
-
 									<hr class="major" />
-									<a id="COVEMAS"></a>
-									<h2>COVEMAS</h2>
-									<p><span class="image left50"><img src="images/covemas.webp" alt="" /></span>
-										COVEMAS - <b>Control and Optimization for Event-triggered Networked Autonomous Multi-Agent Systems</b> - is a joint Sino-German research project COVEMAS, 
-										founded from DFG and NSFC, aims at reducing the energy cost of such cooperating multi-agent systems. 
-										Many tasks for modern robotic systems require the coordination of multiple interacting agents. 
-										Typically distributed coordination algorithms for multi-agent systems assume continuous-time agent dynamics, sensing and actuation. 
+									<a id="seaclear"></a>
+									<h2>SeaClear</h2>
+									<p><span class="image left60"><img src="../images/seaclear_logo.png" alt="" /></span>
+									SeaClear — <b>Search, Identification and Collection of Marine Litter with Autonomous Robots</b> — is a Horizon 2020 funded project that aims to solve, 
+									with the help of robots and artificial intelligence, one of the most important environmental problems: ocean litter. 
+									The SeaClear 1.0 project is a four-year project with a budget of <b>5 million €</b>, running from January 1st, 2020 to December 31st, 2023 by the European Union's Horizon 2020 research and innovation programme.
+									The SeaClear 2.0 is granted <b>9 million €</b>, and will continue and extend the work for the next four years to develop a holistic approach to address the full cycle of marine litter. 
 									</p>
-									<p>Typical applications include - amongst others - search and rescue, surveillance coverage and environmental monitoring. 
-										<a href="https://www.ce.cit.tum.de/en/itr/projects/covemas-control-and-optimization-for-event-triggered-networked-autonomous-multi-agent-systems/">Read and view more</a>.</p>
+									<p>We are building the first robots to clean the litter from the ocean floor. <a href="https://seaclear-project.eu/">Read and view more</a>.</p>
 									<h4>Reaearch Assistant</h4>
-										<ul>
-											<li>Designed novel cooperative learning algorithms for centralized and distributed systems</li>
-											<li>Delivered the learning-based control protocols for the coordination of multiple interacting agents</li>
-											<li>Developed mode-free distributed MPC and shared distributed MPC control laws</li>					
-										</ul>
+									<ul>
+										<li>Developed a data-driven model for Autonomous Underwater Vehicles (AUVs) with real-time online learning</li>
+										<li>Created a simulation platform for control testing of AUVs</li>
+										<li>Performed hardware tests, e.g., grabbing bottles in various currents, in Marseilles and Hamburg port</li>					
+									</ul>
 
-										<p> Agents track a deisred trajectory (red) without learning (right) and with cooperative learning (left): </p>
-										<div style="display: flex; justify-content: center;">
-											<span class="image "><img src="gifs/MASnolearn.gif" alt="An animated GIF"/></span>
-										</div>
+									
+									<p> AUVs track a deisred trajectory (black) without learning (right) and with off-line learning (left) in a stable environment: </p>
+									<div style="display: flex; justify-content: center;">
+										<span class="image c80"><img src="../gifs/AUVnolearn.gif" alt="An animated GIF"/></span>
+									</div>
+
+									<div style="padding-top: 20px;">
+										<p>AUVs track a desired trajectory (black) with off-line learning (right) and on-line learning (left) in a changing environment: </p>
+									</div>
+									<div style="display: flex; justify-content: center;">
+										<span class="image c80"><img src="../gifs/AUVwithlearn.gif" alt="An animated GIF"/></span>
+									</div>	
+
+									
+
+									
 									
 
 										<ul class="pagination">
-											<li><a href="projects-SeaClear.html" class="button">Prev</a></li>
+											<li><a href="projects-AutoFashion.html" class="button">Prev</a></li>
 											<li><a href="projects-DengAI.html" class="page">1</a></li>
 											<li><a href="projects-HarryPotter.html" class="page">2</a></li>
 											<li><a href="projects-AutoFashion.html" class="page">3</a></li>
-											<li><a href="projects-SeaClear.html" class="page">4</a></li>
-											<li><a href="projects-COVEMAS.html" class="page active">5</a></li>
+											<li><a href="projects-SeaClear.html" class="page active">4</a></li>
+											<li><a href="projects-COVEMAS.html" class="page">5</a></li>
 											<li><a href="projects-6GLife.html" class="page">6</a></li>
 											<li><a href="projects-REHYB.html" class="page">7</a></li>
 											<li><a href="projects-PI.html" class="page">8</a></li>
@@ -108,8 +117,8 @@
 											<li><a href="projects-MultiAUV.html" class="page">10</a></li>
 											<li><a href="projects-MiniPlant.html" class="page">11</a></li>
 											<li><a href="#" class="page">12</a></li>
-											<li><a href="projects-6GLife.html" class="button">Next</a></li>
-									</ul>
+											<li><a href="projects-COVEMAS.html" class="button">Next</a></li>
+									</ul>	
 									
 
 						</div>
@@ -127,34 +136,36 @@
 								</section>
 
 							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li><a href="biography.html">Biography</a></li>
-										<li><a href="projects-DengAI.html">Projects</a></li>
-										<li><a href="research.html">Research</a></li>
-										<li>
-											<span class="opener">Publications</span>
-											<ul>
-												<li><a href="publication-papers.html">Papers</a></li>
-												<li><a href="publication-papersChiense.html">Papers in Chinese</a></li>
-												<li><a href="publication-patents.html">Patents</a></li>
-												<li><a href="publication-services.html">Acadmic Services</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">More</span>
-											<ul>
-												<li><a href="papers.html">Read</a></li>
-												<li><a href="patents.html">Resources</a></li>
-											</ul>
-										</li>
-										<li><a href="elements.html">Elements</a></li>
-									</ul>
-								</nav>
+							<nav id="menu">
+								<header class="major">
+									<h2>Menu</h2>
+								</header>
+								<ul>
+									<li><a href="../index.html">Home</a></li>
+									<li><a href="biography.html">Biography</a></li>
+									<li><a href="curriculumVitae.html">Curriculum Vitae</a></li>
+									<li><a href="projects-DengAI.html">Projects</a></li>
+									<li><a href="research.html">Research</a></li>
+									<li>
+										<span class="opener">Publications</span>
+										<ul>
+											<li><a href="publication-papers.html">Papers</a></li>
+											<li><a href="publication-papersChiense.html">Papers in Chinese</a></li>
+											<li><a href="publication-patents.html">Patents</a></li>
+											<li><a href="publication-services.html">Acadmic Services</a></li>
+										</ul>
+									</li>
+									<li><a href="achievements.html">Achievements</a></li>
+									<li><a href="life.html">Life</a></li>
+									<li>
+										<span class="opener">More</span>
+										<ul>
+											<li><a href="read.html">Read</a></li>
+											<li><a href="resources.html">Resources</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
 								
 
 							<!-- Section -->
@@ -209,11 +220,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>
