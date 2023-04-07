@@ -72,21 +72,41 @@
 								
 
 									<hr class="major" />
-									<a id="AutoFashion"></a>
-									<h2>AutoFashion</h2>
-									<p><span class="image left40"><img src="../images/closet.svg" alt="" /></span>
-									AutoFashion — <b>A Smart Closet</b> — is a smart closet. 
+									<a id="ResearchMate"></a>
+									<h2>ResearchMate</h2>
+									<p><span class="image left60"><img src="../images/researchMate.jpeg" alt="" /></span>
+										ResearchMate — <b>Find Your Next Collborator</b> — is a project designed to facilitate collaborations between researchers by providing a platform for finding potential collaborators. 
+										The platform utilizes advanced techniques such as node and word embedding to recommend potential collaborators based on author similarity. 
+										By creating a collaborative filtering system that takes into account both collaboration patterns and author attributes, 
+										"Research Mate" aims to break down research barriers and connect researchers worldwide to enhance and accelerate research.
 									</p>
-									<p> </p>
-									<p>Details about the project is coming soon.</p>
+									<p>More details about this project can be found in the slides.</p>
 									
 									
 									<h4>Data Scientist</h4>
 									<ul>
-										<li>A</li>
-										<li>B</li>
-										<li>C</li>					
+										<li>Extract missing keywords using GPT-4 with prompt engineering</li>
+										<li>Create node and word emnedding for recommending collborators according authors' similarities in a vector space</li>
+										<li>Deploy the <a href="https://pubmed-dsr.herokuapp.com/">App</a> in Heroku</li>					
 									</ul>
+									<h4>Project slides:</h4>
+									<div id="ResearchMate-pdf-container">
+										<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.6/pdfobject.min.js"></script>
+										<script>
+										PDFObject.embed("../files/ResearchMate-presentation.pdf", "#ResearchMate-pdf-container", {
+											height: "1000px",
+											page: "1",
+											pdfOpenParams: {
+												view: "FitH",
+												scrollbar: "1",
+												toolbar: "0",
+												statusbar: "0",
+												messages: "0",
+												navigation: "1"
+											}
+										});
+										</script>
+									</div>
 
 									
 								<ul class="pagination">
