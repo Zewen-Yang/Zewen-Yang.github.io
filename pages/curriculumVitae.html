@@ -22,7 +22,7 @@
 									<ul class="icons">
 										<li><a href="https://www.linkedin.com/in/zewen-yang-10b172243/" class="icon brands fa-linkedin"><span class="label"></span></a></li>
 										<li><a href="https://github.com/alwinyang91" class="icon brands fa-github"><span class="label"></span></a></li>
-										<li><a href="https://github.com/Zewen-Yang" class="icon brands fa-github"><span class="label"></span></a></li>
+										<!-- <li><a href="https://github.com/Zewen-Yang" class="icon brands fa-github"><span class="label"></span></a></li> -->
 										<li><a href="https://scholar.google.com/citations?user=DbuBsVUAAAAJ&hl=en&oi=ao" class="icon solid fa-user-graduate"><span class="label"></span></a></li>
 									</ul>
 								</header>
@@ -33,25 +33,23 @@
 									<h1>Curriculum Vitae</h1>
 								</header>
 								
-								<div id="pdf-container">
-							
-							
-							<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.6/pdfobject.min.js"></script>
-							<script>
-							PDFObject.embed("../files/cv0304.pdf", "#pdf-container", {
-								height: "1000px",
-								page: "1",
-								pdfOpenParams: {
-									view: "FitH",
-									scrollbar: "1",
-									toolbar: "0",
-									statusbar: "0",
-									messages: "0",
-									navigation: "1"
-								}
-							});
-							</script>
-							</div>
+								<div id="CV-pdf-container">
+									<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.6/pdfobject.min.js"></script>
+									<script>
+									PDFObject.embed("../files/cv0304.pdf", "#CV-pdf-container", {
+										height: "1000px",
+										page: "1",
+										pdfOpenParams: {
+											view: "FitH",
+											scrollbar: "1",
+											toolbar: "0",
+											statusbar: "0",
+											messages: "0",
+											navigation: "1"
+										}
+									});
+									</script>
+								</div>
 							</section>
 									
 

@@ -22,7 +22,7 @@
 									<ul class="icons">
 										<li><a href="https://www.linkedin.com/in/zewen-yang-10b172243/" class="icon brands fa-linkedin"><span class="label"></span></a></li>
 										<li><a href="https://github.com/alwinyang91" class="icon brands fa-github"><span class="label"></span></a></li>
-										<li><a href="https://github.com/Zewen-Yang" class="icon brands fa-github"><span class="label"></span></a></li>
+										<!-- <li><a href="https://github.com/Zewen-Yang" class="icon brands fa-github"><span class="label"></span></a></li> -->
 										<li><a href="https://scholar.google.com/citations?user=DbuBsVUAAAAJ&hl=en&oi=ao" class="icon solid fa-user-graduate"><span class="label"></span></a></li>
 									</ul>
 								</header>
@@ -75,17 +75,43 @@
 									<a id="SignLanguage"></a>
 									<h2>AI-SignLanguage</h2>
 									<p><span class="image left40"><img src="../images/signLanguage.png" alt="" /></span>
-										AI-SignLanguage — <b>AI-Enabled Sign Language Understanding and Learning</b> — bridges the communication gap.</p>
-									<p>Overall, the goal of the project could be to create more intelligent and personalized human-computer interfaces that enable seamless and natural interactions between people and technology</p>
-									<p>Details about the project can be find in the slides.</p>
+										AI-SignLanguage — <b>AI-Enabled Sign Language Understanding and Learning</b> — bridges the communication gap. This project aimed at bridging the communication gap between hearing-impaired individuals and the hearing world. 
+									The project utilizes machine learning techniques to develop intelligent and personalized human-computer interfaces that enable seamless and natural interactions between people and technology.</p>
+									<p>The project involves several machine learning techniques, including computer vision and deep learning, to develop an intelligent system that can accurately recognize and interpret sign language gestures. 
+										Object detection techniques allow the system to identify and track the various sign languages. 
+										Additionally, using action detection techniques enables the system to analyze and interpret the temporal patterns of sign language gestures.
+										Finally, a sign language learning application that utilizes gesture analysis evaluated by human experts is develpoed.
+										This approach enables the system to provide personalized feedback and guidance to users, helping them improve their sign language skills and proficiency levels.
+									</p>
+									<p>More details about this project can be found in the slides.</p>
 									
 					
 									<h4>Data Scientist</h4>
 									<ul>
-										<li>Sign Language Recognition with Object Detection</li>
-										<li>Sign Language Understanding with Action Detection</li>
-										<li>Sign Language Learning with Gesture Analysis</li>					
+										<li>Sign language recognition with object detection using TensorFlow2 
+											Detection Models and the state-of-the-art model YOLOv8
+										</li>
+										<li>Sign language understanding with action detection with MediaPipe and LSTM model</li>
+										<li>Develop a sign language learning application for gesture analysis with by human experts' evaluation </li>					
 									</ul>
+									<h4>Project slides:</h4>
+									<div id="SignLanguage-pdf-container">
+										<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.6/pdfobject.min.js"></script>
+										<script>
+										PDFObject.embed("../files/SignLauguage-Presentation-online.pdf", "#SignLanguage-pdf-container", {
+											height: "1000px",
+											page: "1",
+											pdfOpenParams: {
+												view: "FitH",
+												scrollbar: "1",
+												toolbar: "0",
+												statusbar: "0",
+												messages: "0",
+												navigation: "1"
+											}
+										});
+										</script>
+									</div>
 
 
 								<ul class="pagination">
