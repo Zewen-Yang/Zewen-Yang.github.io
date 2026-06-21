@@ -86,6 +86,23 @@ changes arrive via `bundle update`, not via merge — so content conflicts stay 
 
 ## GitHub Pages
 
-After the first push, enable Pages in **Settings → Pages** (Source: GitHub Actions, which
-the bundled `.github/workflows/` deploy uses, or the `main` branch). The site goes live at
-`https://zewen-yang.github.io` shortly after the build finishes.
+The bundled `.github/workflows/deploy.yml` builds the site and **pushes the result to a
+`gh-pages` branch** (via `JamesIves/github-pages-deploy-action`). So Pages must be told to
+serve that branch:
+
+1. Go to **Settings → Pages → Build and deployment**.
+2. Set **Source** to `Deploy from a branch`.
+3. Set **Branch** to `gh-pages` / `(root)`, then **Save**.
+
+The site goes live at `https://zewen-yang.github.io` a few minutes later.
+
+> Common 404 cause: the build succeeded and `gh-pages` exists with a valid `index.html`,
+> but **Source** is not pointing at `gh-pages` (e.g. left on `GitHub Actions` or `main`).
+> Fix it with the steps above — no code change needed.
+
+### Re-running a deploy
+
+`deploy.yml` ignores `README.md` (and a few docs) in its path filters, so editing only those
+files will **not** trigger a deploy. To force a rebuild, either edit a content/config file
+and push, or run the **Deploy site** workflow manually from the **Actions** tab
+(`workflow_dispatch`).
