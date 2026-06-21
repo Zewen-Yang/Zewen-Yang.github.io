@@ -10,6 +10,7 @@ This guide is split into focused pages so you only read what you need:
 | [01 — Toolchain setup](01-toolchain-setup.md) | First time only. Install Ruby/Bundler/Node/Python and get a clean local build + dev server. |
 | [02 — Content editing](02-content-editing.md) | Day-to-day. Edit the homepage, publications, CV, news, projects, and posts (with real gotchas we hit). |
 | [03 — Theming & overrides](03-theming-overrides.md) | When you change colors/look, or edit any plugin-owned file. Covers the Dracula theme and the `.al-folio-overrides.yml` audit workflow. |
+| [04 — Own the repo & pull updates](04-git-fork-and-upstream.md) | One-time git setup to make this your own repo while still pulling al-folio updates (`origin`/`upstream`), plus GitHub Pages. |
 
 ## Mental model (read this once)
 
