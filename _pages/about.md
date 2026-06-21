@@ -1,17 +1,14 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: AI Researcher ｜ Robotic Control Engineer
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic_zewen.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  more_info: false
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,8 +24,15 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a Senior Research Scientist at [Agile Robots](https://www.agile-robots.com/en/) in Munich, working on agentic frameworks and world models for robotic manipulation. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Previously, I was a postdoctoral researcher at the [Munich Institute of Robotics and Machine Intelligence (MIRMI)](https://www.mirmi.tum.de/mirmi/startseite/), supervised by Prof. [Sami Haddadin](https://en.wikipedia.org/wiki/Sami_Haddadin) and working closely with Dr. [Hamid Sadeghian](https://scholar.google.com/citations?user=HGwI9iEAAAAJ&hl=en). 
+Before that, in the aftermath of the pandemic, I joined the [Robert Koch Institute](https://www.rki.de/DE/Home/home_node.html) as a postdoctoral researcher, working on AI for public health research.
+I did my Ph.D. research in Control Science & Engineering at the [Technical University of Munich](https://www.tum.de/) and [Harbin Engineering University](https://en.hrbeu.edu.cn/), where I was supervised by Prof. [Sandra Hirche](https://en.wikipedia.org/wiki/Sandra_Hirche) and Prof. Zheping Yan and worked closely with Dr. [Stefan Sosnowski](https://scholar.google.com/citations?user=WGdQIlEAAAAJ&hl=en).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+My work lies at the intersection of **Machine Learning** and **Robotics**, driven by a strong interest in machine intelligence and the emerging technologies that make everyday life better and work more efficient. 
+I enjoy moving between building methods that hold up in the real world and exploring the deeper scientific questions behind them.
+I also care deeply about education and research, and find it especially rewarding to work alongside ambitious students and grow together with them.
+
+I am always glad to connect with others who share these interests, whether for collaboration, projects, research, or simply a good conversation. Feel free to [reach out](mailto:zewenreal@gmail.com).
+

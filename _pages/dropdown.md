@@ -1,13 +1,13 @@
 ---
 layout: page
-title: submenus
+title: More
 nav: true
-nav_order: 8
+nav_order: 6
 dropdown: true
 children:
-  - title: bookshelf
-    permalink: /books/
+  - title: Awards
+    permalink: /awards/
   - title: divider
-  - title: blog
-    permalink: /blog/
+  - title: News
+    permalink: /news/
 ---

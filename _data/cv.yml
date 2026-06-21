@@ -1,189 +1,267 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  name: Zewen Yang
+  label: Senior Researcher Scientist
+  email: zewenreal@gmail.com
+  location: Munich, Germany
+  image: prof_pic_zewen.jpg
+  photo: ../assets/img/prof_pic_zewen.jpg
+  summary: I am a Senior Research Scientist at Agile Robots, Munich, working on AI and Robotics, and a Ph.D. holder in Control Science & Engineering from the Technical University of Munich (TUM) and Harbin Engineering University.
+          My expertise lies in the fields of Multi-Agent System, Generative Models, Robotics, Bayesian Learning, and Control Theory.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: Zewen-Yang
     - network: LinkedIn
-      username: example
+      username: zewen-yang
 
   address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+    street: Plinganserstraße 134
+    city: München
+    region: Bavaria
+    postalCode: 81369
+    countryCode: DE
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
+      - institution: Technical University of Munich (TUM)
+        location: Munich, Germany
+        url: https://www.tum.de/
+        area: Mathine Learning and Control Theory
+        studyType: Ph.D.
+        start_date: 2019-09-01
+        end_date: 2022-11-31
         score: ""
-        courses: "Theory of Relativity"
-        highlights:
-          - Description 1.
-          - Description 2.
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
+      - institution: Harbin Engineering University
+        location: Harbin, China
+        url: https://english.hrbeu.edu.cn
+        area: Control Science & Engineering
+        studyType: Ph.D.
+        start_date: 2017-09-01
+        end_date: 2019-08-31
+        score: ""
+
+      - institution: Northeast Forestry University
+        location: Harbin, China
+        url: https://en.nefu.edu.cn
+        area: Mechanical and Electrical Engineering
+        studyType: Master of Engineering
+        start_date: 2014-09-01
+        end_date: 2017-06-31
+        score: ""
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Agile Robots SE
+        position: Senior Research Scientist
+        location: Munich, Germany
+        url: https://www.agile-robots.com/en/
+        start_date: 2026-01-01
+        end_date: present
         highlights:
-          - Relativity
-          - Description 2.
+          - "Worked on agentic freamworks for robotic systems"
+          - "Investigated world models for manipulation tasks"
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+
+      - company: Munich Institute of Robotics and Machine Intelligence (MIRMI), TUM
+        position: Postdoctoral Researcher
+        location: Munich, Germany
+        url: https://www.mirmi.tum.de/mirmi/startseite/
+        start_date: 2025-01-01
+        end_date: 2025-12-31
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Teaching Curriculum: Advanced Robot Control and Learning"
+          - |
+            **Federal Ministry of Education and Research, Germany — [6G-life](https://6g-life.de/)**: 6G Communication Networks with a Focus on Human-Machine Collaboration (€70 Million)
+            - Proposed safe motion planning of robots with generative models (Diffusion/Flow Matching models)
+            - Developed algorithms of cloud-based high-frequency control for bilateral teleoperation
+            - Designed novel one-shot imitation learning algorithms for robotic systems
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
+      - company: Robert Koch Institute — Center for Artificial Intelligence in Public Health Research
+        position: Postdoctoral Researcher
         location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+        url: https://www.rki.de/EN/Institute/Organisation/Departments/departments-node.html
+        start_date: 2023-06-01
+        end_date: 2024-12-31
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - "Teaching Curriculum: Advanced Data Visualization for (Explainable) AI"
+          - |
+            **Federal Ministry of Health, Germany — [AI-DAVis-PANDEMICS](https://www.bundesgesundheitsministerium.de/ministerium/ressortforschung/handlungsfelder/digitalisierung/ai-davis-pandemics)**: AI-supported Data Analysis & Visualization of Pandemics (€1.78 Million)
+            - Built a real-time audience-centric web app for pandemic surveillance with ML-based data analysis
+            - Proposed a nested framework for ML models' design and validation considering AI regulations
+            - Designed interpretable molecular encodings and representations for machine learning tasks
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: Data Science Retreat
+        position: Data Scientist
+        location: Berlin, Germany
+        url: https://datascienceretreat.com/about
+        start_date: 2022-12-01
+        end_date: 2023-05-31
+        highlights:
+          - "Statistical Learning: evaluated time series models via MLflow for forecasting the spread of disease; built a churn prediction model with data pre-processing and feature engineering"
+          - "Deep Learning: real-time object detection, action detection and gesture analysis for sign language recognition; trained image classification models using vision transformers"
+          - "Natural Language Processing: extracted and visualized character relationships via named entity recognition; used node and word embeddings to recommend research collaborators; fine-tuned language models for segmentation and text-generation tasks with GPT"
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - company: Technical University of Munich — Chair of Information-oriented Control
+        position: Research Associate
+        location: Munich, Germany
+        url: https://www.ce.cit.tum.de/en/itr/home/
+        start_date: 2019-09-01
+        end_date: 2022-11-30
+        highlights:
+          - Supervised 10+ student theses, several achieving the highest German grade (1.0)
+          - "Teaching Curriculum: Advanced Control and Robotics"
+          - |
+            **European Union's Horizon 2020 — [SeaClear](https://seaclear-project.eu/)**: Search, Identification and Collection of Marine Litter with Autonomous Robots (1.0: €5 Million, 2.0: €9 Million)
+            - Developed a data-driven model for Autonomous Underwater Vehicles (AUVs) with uncertainty quantification
+            - Created a simulation platform for conducting control tests of AUVs
+            - Contributed to hardware tests at Marseilles and Hamburg ports (e.g., bottle grabbing and vehicle recycling)
+          - |
+            **European Union's Horizon 2020 — [REHYB](https://rehyb.eu/)**: Rehabilitation Based on Hybrid Neuroprosthesis (€7 Million)
+            - Built a digital twin for real-time monitoring of human motion
+            - Detected abnormal movements using deep neural networks with multiple sensors
+            - Investigated the safe control of human muscles by FES to achieve functional movements
 
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+      - company: Harbin Engineering University — College of Intelligent Systems Science and Engineering
+        position: Principal Investigator (May 2019 – Jun 2022) / Doctoral Researcher (Sep 2017 – Aug 2019)
+        location: Harbin, China
+        url: https://heucisse.hrbeu.edu.cn/
+        start_date: 2017-09-01
+        end_date: 2022-06-30
+        highlights:
+          - |
+            **Ph.D. Student Research & Innovation Fund of Fundamental Research Funds for Central Universities**: Research on the Coordinated Control Method of AUV Swarm (¥70k)
+            - Led a research team and completed the project with top-tier publications
+            - Proposed novel formation control methods for AUV swarm using the consensus algorithm
+          - |
+            **National Natural Science Foundation of China & National Key Innovation Project**: Environmental Prediction & Task Reconfiguration of AUV for Covert Operations in the Coastal Sea (¥600k); Overall Technology Scheme of the Multiple AUVs System (¥50 Million)
+            - Developed advanced control algorithms for underactuated AUVs
+            - Investigated obstacle avoidance and recovery docking approaches for AUVs
+            - Authored a chapter titled "Reliability Analysis & Design Technology of AUV" in *Control Technology of AUV*
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+      - company: Suzhou Electrical Apparatus Science Academy Co., Ltd.
+        position: Test & Analysis Engineer
+        location: Suzhou, China
+        url: http://www.eeti.com.cn/en/
+        start_date: 2016-10-01
+        end_date: 2017-02-28
+        highlights:
+          - Implemented experiment tests to analyze various characteristics of fiber-optic current transformers
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+      - company: Harbin Turbine Co., Ltd.
+        position: Automation Engineer
+        location: Harbin, China
+        url: https://www.htc.com.cn/en/
+        start_date: 2014-03-01
+        end_date: 2014-06-30
+        highlights:
+          - CNC lathe programming, quality inspection
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: AI Tools
+        icon: fa-solid fa-robot
+        keywords: "Pi, Cursor, Codex, Perplexity"
+
+      - name: Programming & Markup Languages
+        icon: fa-solid fa-code
+        keywords: "Python, Matlab & Simulink, Julia, C++, JavaScript, TypeScript, SQL, HTML, CSS, LaTeX, Markdown"
+
+      - name: Machine Learning
+        icon: fa-solid fa-brain
+        keywords: "PyTorch, JAX, TensorFlow, Keras, Hugging Face, scikit-learn, statsmodels, Unsloth, Transformers/Tokenizers/PEFT/TRL (Hugging Face), openai, spaCy, NLTK, Gensim"
+
+      - name: Robotics
+        icon: fa-solid fa-microchip
+        keywords: "Isaac Sim/Lab, MuJoCo, ROS, Gazebo, LeRobot, OpenCV, Qualisys"
+
+      - name: Web & Front-end
+        icon: fa-solid fa-window-maximize
+        keywords: "Next.js, Vite, React, Tailwind CSS, shadcn/ui, Aceternity UI, Figma"
+
+      - name: Back-end & Database
+        icon: fa-solid fa-database
+        keywords: "Django, Flask, FastAPI, Postman, Selenium, MySQL, PostgreSQL"
+
+      - name: Visualization
+        icon: fa-solid fa-chart-line
+        keywords: "D3.js, Vega-Lite/-Altair, Observable, Plotly, Matplotlib, seaborn, GeoPandas, NumPy, Pandas"
+
+      - name: Cloud & Hosting Tools
+        icon: fa-solid fa-cloud
+        keywords: "Git, GitHub, GitLab, Docker, AWS, Streamlit, Render, Heroku, Colab, Overleaf, Notion, Obsidian, Jira"
 
     Languages:
-      - name: German
-        summary: "Native speaker"
 
       - name: English
         summary: "Fluent"
 
+      - name: Chinese
+        summary: "Native"
+
+      - name: German
+        summary: "Basic"
+
+    Publications:
+      - summary: "See the full list on my [Publications page](../publications/)."
+
+    Awards:
+      - summary: "See the full list on my [Awards page](../awards/)."
+
+    # Volunteer:
+    #   - company: People's Climate March
+    #     position: Lead Organizer
+    #     location: Zurich, Switzerland
+    #     start_date: 2014-04-01
+    #     end_date: 2015-07-01
+    #     summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+    #     highlights:
+    #       - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
+    #       - "Men of the year 2014 by Time magazine"
+
+    # Certificates:
+    #   - name: Machine Learning
+    #     date: 2018-01-01
+    #     issuer: Stanford University
+    #     icon: fa-solid fa-location-dot
+
+    #   - name: Quantum Computing
+    #     date: 2018-01-01
+    #     issuer: Stanford University
+    #     icon: fa-solid fa-tag
+
+    #   - name: Quantum Information
+    #     date: 2018-01-01
+    #     issuer: Stanford University
+    #     icon: fa-solid fa-envelope
+
+    # Projects:
+    #   - name: Quantum Computing
+    #     summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+    #     highlights:
+    #       - Quantum Teleportation
+    #       - Quantum Cryptography
+    #     start_date: 2018-01-01
+    #     end_date: 2018-01-01
+
+
+    # References:
+    #   - name: Professor John Doe
+    #     icon: fa-solid fa-laptop
+    #     reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+
+    #   - name: Professor Jane Smith
+    #     icon: fa-solid fa-thumbtack
+    #     reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+
     Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
 
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
+      - name: Fitness
+        icon: fa-solid fa-dumbbell
+        keywords: "Strength Training, Running, Hiking"
 
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
+      - name: Movies
+        icon: fa-solid fa-film
+        keywords: "Sci-Fi, Documentary, Action, Comedy, Drama"
 
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Music
+        icon: fa-solid fa-music
+        keywords: "R&B, Hip-Hop, Electronic"
