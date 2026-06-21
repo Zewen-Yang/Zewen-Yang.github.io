@@ -74,6 +74,37 @@ When you add a tweak like this, prefer editing **CSS variables / rules already p
 the override** rather than introducing a brand-new override file, to keep the audit
 surface small.
 
+### Gotcha: a style works locally but looks wrong on GitHub Pages (PurgeCSS)
+
+If a rule looks correct under `jekyll serve` but is **missing/ugly on the deployed site**,
+the culprit is almost always **PurgeCSS**. The deploy workflow (`.github/workflows/deploy.yml`)
+runs an extra `purgecss -c purgecss.config.js` step **after** the build — local `serve` does
+not. PurgeCSS scans the static HTML and deletes any CSS selector it can't find there.
+
+The trap: elements that a JS library **injects at runtime** never appear in the static HTML,
+so PurgeCSS strips their styles and they fall back to the library's defaults. We hit this with
+the back-to-top button — `vanilla-back-to-top` creates `#back-to-top` (and its inner `<svg>`)
+in the browser, so our Dracula pink rules in `_sass/_themes.scss` were purged and the button
+turned the library's default black on the live site.
+
+The fix is to **safelist** the selector in `purgecss.config.js` so it survives the purge:
+
+```js
+safelist: [
+  // ...
+  // vanilla-back-to-top injects #back-to-top at runtime → safelist it.
+  "back-to-top",
+  // medium-zoom injects these at runtime too.
+  "medium-zoom-overlay",
+  "medium-zoom-image--opened",
+],
+```
+
+safelist entries match any selector **containing** that string (so `"back-to-top"` keeps both
+`#back-to-top` and `#back-to-top svg`). `purgecss.config.js` is **starter-owned**, so this is a
+normal config edit — it is *not* a plugin override and needs **no** audit. Rule of thumb: any
+runtime-injected element whose styling disappears after deploy belongs in this safelist.
+
 ## The override audit workflow (do this every time)
 
 Whenever you create or edit a file that a gem owns, run the audit and acknowledge the

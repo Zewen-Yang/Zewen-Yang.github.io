@@ -23,5 +23,10 @@ module.exports = {
     // and page chrome (scroll-progress bar, ToC) bleeds through a zoomed image.
     "medium-zoom-overlay",
     "medium-zoom-image--opened",
+    // vanilla-back-to-top injects #back-to-top (and its inner svg) at runtime, so
+    // the selector is absent from the static HTML PurgeCSS scans. Without this the
+    // local theme rules (Dracula bg/color, sizing) are purged and the button falls
+    // back to the library's default dark styling on the deployed site.
+    "back-to-top",
   ],
 };
