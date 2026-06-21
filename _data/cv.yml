@@ -26,7 +26,7 @@ cv:
       - institution: Technical University of Munich (TUM)
         location: Munich, Germany
         url: https://www.tum.de/
-        area: Mathine Learning and Control Theory
+        area: Machine Learning and Control Theory
         studyType: Ph.D.
         start_date: 2019-09-01
         end_date: 2022-11-31
