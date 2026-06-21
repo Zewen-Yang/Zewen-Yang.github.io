@@ -5,8 +5,8 @@ email: zewenreal@gmail.com # your email address
 github_username: Zewen-Yang # your GitHub username
 # inspirehep_id: # Inspire HEP author ID
 # rss_icon: true # comment this line to hide the RSS icon
-scholar_userid: DbuBsVUAAAAJ # your Google Scholar ID (e.g. qc6CJjYAAAAJ)
 linkedin_username: zewen-yang # your LinkedIn username (the part after linkedin.com/in/)
+scholar_userid: DbuBsVUAAAAJ # your Google Scholar ID (e.g. qc6CJjYAAAAJ)
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 # custom_social: # can be any name here other than the ones already defined in the jekyll-socials plugin
