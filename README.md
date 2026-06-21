@@ -2,7 +2,7 @@
 
 <br>
 
-My personal homepage: **[zewen-yang.github.io](https://zewen-yang.github.io)**
+My academic homepage: **[zewen-yang.github.io](https://zewen-yang.github.io)**
 
 I also keep a more personal site at **[alwin-yang.github.io](https://alwin-yang.github.io)**.
 
