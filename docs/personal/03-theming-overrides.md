@@ -8,7 +8,7 @@ the **override audit workflow** you must follow any time you edit a plugin-owned
 In v1 the runtime lives in gems. The theme CSS (`_sass/_themes.scss`), base layouts
 (`_layouts/*.liquid`), and includes (`_includes/*.liquid`) are owned by `al_folio_core`,
 **not** by this repo. When you copy one of those files into the repo to customize it, you
-create a **local override** that *shadows* the gem's version.
+create a **local override** that _shadows_ the gem's version.
 
 Local overrides are allowed, but they are **tracked** so that a future `bundle update`
 can warn you when the upstream gem version drifts from what you forked. The tracking file
@@ -16,11 +16,11 @@ is `.al-folio-overrides.yml`, and **it must be committed**.
 
 This site currently overrides three files (all owned by `al_folio_core`):
 
-| File | Why |
-| ---- | --- |
-| `_sass/_themes.scss` | Dracula accent colors + back-to-top tweak |
-| `_includes/head.liquid` | head customization |
-| `_layouts/about.liquid` | homepage layout tweak |
+| File                    | Why                                       |
+| ----------------------- | ----------------------------------------- |
+| `_sass/_themes.scss`    | Dracula accent colors + back-to-top tweak |
+| `_includes/head.liquid` | head customization                        |
+| `_layouts/about.liquid` | homepage layout tweak                     |
 
 ## Changing the theme color (Dracula)
 
@@ -39,7 +39,7 @@ $dracula-purple: #bd93f9;
 $dracula-pink: #ff79c6;
 
 :root {
-  --global-theme-color: #{$dracula-pink};   // main accent
+  --global-theme-color: #{$dracula-pink}; // main accent
   --global-hover-color: #{$dracula-pink};
   --global-footer-bg-color: #{$dracula-background};
   --global-footer-text-color: #{$dracula-purple};
@@ -65,7 +65,7 @@ above the fixed-bottom footer so it isn't obscured:
 
 ```scss
 #back-to-top {
-  bottom: 45px;     // clear the ~35px fixed-bottom footer (Bootstrap z-index 1030)
+  bottom: 45px; // clear the ~35px fixed-bottom footer (Bootstrap z-index 1030)
   z-index: 1031;
 }
 ```
@@ -102,7 +102,7 @@ safelist: [
 
 safelist entries match any selector **containing** that string (so `"back-to-top"` keeps both
 `#back-to-top` and `#back-to-top svg`). `purgecss.config.js` is **starter-owned**, so this is a
-normal config edit — it is *not* a plugin override and needs **no** audit. Rule of thumb: any
+normal config edit — it is _not_ a plugin override and needs **no** audit. Rule of thumb: any
 runtime-injected element whose styling disappears after deploy belongs in this safelist.
 
 ## The override audit workflow (do this every time)
@@ -137,7 +137,7 @@ overrides:
     upstream_path: _sass/_themes.scss
     upstream_sha256: <hash of the gem's version>
     local_sha256: <hash of your version>
-    acknowledged_at: '2026-06-20'
+    acknowledged_at: "2026-06-20"
 ```
 
 ### After upgrading gems (`bundle update`)

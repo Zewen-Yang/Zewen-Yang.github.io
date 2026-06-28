@@ -11,20 +11,20 @@ homepage. The front matter controls the page; the Markdown body below it is your
 Front matter you will actually change:
 
 ```yaml
-subtitle: AI Researcher ｜ Robotic Control Engineer   # tagline under your name
+subtitle: AI Researcher ｜ Robotic Control Engineer # tagline under your name
 profile:
   align: right
-  image: prof_pic_zewen.jpg     # file in assets/img/ (see "Profile photo" below)
+  image: prof_pic_zewen.jpg # file in assets/img/ (see "Profile photo" below)
   image_circular: false
   more_info: false
-selected_papers: true           # shows papers marked selected={true} in papers.bib
-social: true                    # social icons at the bottom
+selected_papers: true # shows papers marked selected={true} in papers.bib
+social: true # social icons at the bottom
 announcements:
-  enabled: true                 # the News list (from _news/)
+  enabled: true # the News list (from _news/)
   scrollable: true
   limit: 5
 latest_posts:
-  enabled: true                 # latest blog posts (from _posts/)
+  enabled: true # latest blog posts (from _posts/)
   limit: 3
 ```
 
@@ -91,7 +91,7 @@ The CV page is **data-driven**, not a Markdown page. Two pieces:
 
 ```yaml
 layout: cv
-cv_format: rendercv   # options: rendercv, jsonresume
+cv_format: rendercv # options: rendercv, jsonresume
 cv_pdf: /assets/pdf/example_pdf.pdf
 toc:
   sidebar: left
@@ -109,15 +109,15 @@ YAML block up/down — there is no separate ordering config.
 ```yaml
 cv:
   sections:
-    Education:   [...]
-    Experience:  [...]
-    Skills:      [...]
-    Languages:   [...]
+    Education: [...]
+    Experience: [...]
+    Skills: [...]
+    Languages: [...]
     Publications:
       - summary: "See the full list on my [Publications page](../publications/)."
     Awards:
       - summary: "See the full list on my [Awards page](../awards/)."
-    Interests:   [...]
+    Interests: [...]
 ```
 
 ### Gotchas

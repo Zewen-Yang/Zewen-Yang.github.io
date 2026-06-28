@@ -95,8 +95,8 @@
   <!-- Dark Mode -->
   <!-- Local override: default first-visit theme to dark when no preference is stored yet. -->
   <script>
-    if (!localStorage.getItem("theme")) {
-      localStorage.setItem("theme", "dark");
+    if (!localStorage.getItem('theme')) {
+      localStorage.setItem('theme', 'dark');
     }
   </script>
   <script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>

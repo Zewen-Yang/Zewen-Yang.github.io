@@ -62,7 +62,9 @@ layout: default
           {% assign featured_posts_limit = page.latest_posts.limit | default: featured_posts.size %}
           <div
             class="table-responsive"
-            {% if page.latest_posts.scrollable and featured_posts.size > 3 %}style="max-height: 60vw"{% endif %}
+            {% if page.latest_posts.scrollable and featured_posts.size > 3 %}
+              style="max-height: 60vw"
+            {% endif %}
           >
             <table class="table table-sm table-borderless">
               {% for item in featured_posts limit: featured_posts_limit %}

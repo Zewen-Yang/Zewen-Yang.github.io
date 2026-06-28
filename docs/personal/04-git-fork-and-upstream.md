@@ -9,10 +9,10 @@ what was done, plus the day-to-day commands you use afterwards.
 When you start from al-folio, your only git remote (`origin`) points at the original
 project. To own the site without losing upstream updates, split the two roles:
 
-| Remote | Points at | Used for |
-| ------ | --------- | -------- |
-| `origin` | `git@github.com:Zewen-Yang/Zewen-Yang.github.io.git` | **Your** repo. Daily `push`/`pull`. |
-| `upstream` | `https://github.com/alshedivat/al-folio.git` | The original al-folio. **Pull updates only.** |
+| Remote     | Points at                                            | Used for                                      |
+| ---------- | ---------------------------------------------------- | --------------------------------------------- |
+| `origin`   | `git@github.com:Zewen-Yang/Zewen-Yang.github.io.git` | **Your** repo. Daily `push`/`pull`.           |
+| `upstream` | `https://github.com/alshedivat/al-folio.git`         | The original al-folio. **Pull updates only.** |
 
 For a personal user page the repo name **must** equal your GitHub username:
 `Zewen-Yang.github.io` → served at `https://zewen-yang.github.io`.

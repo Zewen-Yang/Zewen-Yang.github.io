@@ -5,8 +5,9 @@ cv:
   location: Munich, Germany
   image: prof_pic_zewen.jpg
   photo: ../assets/img/prof_pic_zewen.jpg
-  summary: I am a Senior Research Scientist at Agile Robots, Munich, working on AI and Robotics, and a Ph.D. holder in Control Science & Engineering from the Technical University of Munich (TUM) and Harbin Engineering University.
-          My expertise lies in the fields of Multi-Agent System, Generative Models, Robotics, Bayesian Learning, and Control Theory.
+  summary:
+    I am a Senior Research Scientist at Agile Robots, Munich, working on AI and Robotics, and a Ph.D. holder in Control Science & Engineering from the Technical University of Munich (TUM) and Harbin Engineering University.
+    My expertise lies in the fields of Multi-Agent System, Generative Models, Robotics, Bayesian Learning, and Control Theory.
 
   social_networks:
     - network: GitHub
@@ -60,7 +61,6 @@ cv:
         highlights:
           - "Worked on agentic freamworks for robotic systems"
           - "Investigated world models for manipulation tasks"
-
 
       - company: Munich Institute of Robotics and Machine Intelligence (MIRMI), TUM
         position: Postdoctoral Researcher
@@ -122,7 +122,7 @@ cv:
             - Investigated the safe control of human muscles by FES to achieve functional movements
 
       - company: Harbin Engineering University — College of Intelligent Systems Science and Engineering
-        position: Principal Investigator / Doctoral Researcher 
+        position: Principal Investigator / Doctoral Researcher
         location: Harbin, China
         url: https://heucisse.hrbeu.edu.cn/
         start_date: 2017-09-01
@@ -190,7 +190,6 @@ cv:
         keywords: "Git, GitHub, GitLab, Docker, AWS, Streamlit, Render, Heroku, Colab, Overleaf, Notion, Obsidian, Jira"
 
     Languages:
-
       - name: English
         summary: "Fluent"
 
@@ -242,7 +241,6 @@ cv:
     #     start_date: 2018-01-01
     #     end_date: 2018-01-01
 
-
     # References:
     #   - name: Professor John Doe
     #     icon: fa-solid fa-laptop
@@ -253,7 +251,6 @@ cv:
     #     reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
 
     Interests:
-
       - name: Fitness
         icon: fa-solid fa-dumbbell
         keywords: "Strength Training, Running, Hiking"
