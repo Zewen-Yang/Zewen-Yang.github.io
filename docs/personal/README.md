@@ -60,3 +60,31 @@ npm run lint:prettier
 bundle exec jekyll build --baseurl /al-folio
 bundle exec al-folio upgrade overrides audit   # only matters if you have local overrides
 ```
+
+## Formatting (Prettier) — avoid the red CI run
+
+The GitHub Actions deploy runs `npx prettier . --check` as a gate. It only **checks**
+formatting (indentation, quotes, line wrapping, etc.) — it never edits files. Any file
+that doesn't match the rules in `.prettierrc` makes that step exit non-zero and turns the
+whole workflow red. This is the most common "my deploy failed first try" cause, and it
+usually happens after hand-editing `_config.yml`, `_data/cv.yml`, posts, or docs.
+
+### Fix existing formatting issues
+
+```bash
+npx prettier . --write   # auto-format every file in place
+npm run lint:prettier    # confirm it now passes (same check CI runs)
+```
+
+### Format on save (so it never happens again)
+
+This repo ships `.vscode/settings.json` enabling **format on save** with Prettier for
+Markdown, YAML, and Liquid files. To use it:
+
+1. Install the **Prettier - Code formatter** extension (`esbenp.prettier-vscode`) in
+   Cursor / VS Code.
+2. Reload the editor. From then on, saving a file (⌘S) auto-formats it to match
+   `.prettierrc`, so you never push unformatted files.
+
+If you edit files outside the editor (scripts, other tools), still run
+`npm run lint:prettier` before committing.
