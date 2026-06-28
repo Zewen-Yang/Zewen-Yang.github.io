@@ -255,6 +255,23 @@ html[data-theme-setting="light"] {
   border-bottom: none;
 }
 
+/* Local override: keep the citation/altmetric badges (.badges) on the same row
+   as the DOI/HTML/PDF/etc. buttons (.links). Upstream (_publications.scss)
+   renders them as two stacked block-level divs, so the Google Scholar badge
+   wraps onto its own line below the buttons. The `div.` qualifier raises
+   specificity above upstream's `.badges { padding-bottom: 0.5rem }` (which is
+   imported after this file) so the bottom gap is removed too. */
+.publications ol.bibliography li div.links,
+.publications ol.bibliography li div.badges {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.publications ol.bibliography li div.badges {
+  padding-bottom: 0;
+  margin-left: 0.4rem;
+}
+
 /* Local override: al_folio_cv renders Experience/Education as ul.list-group.
    list-style:none for that class lives in bootstrap-compat.css, which is off
    (al_folio.compat.bootstrap.enabled: false), so entries show default bullets. */
