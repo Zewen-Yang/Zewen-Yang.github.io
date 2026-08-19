@@ -31,9 +31,10 @@ repo_trophies:
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
 
-# External service URLs for repository page
-# To use a different instance or service for displaying GitHub stats and trophies,
-# update these URLs. These are used in the repository templates.
+# External service URLs used by the plugin-owned repository templates.
+# The repositories page no longer uses them: it renders cards from
+# _data/repo_cards.yml (refreshed by bin/update_repo_cards.py) so that an
+# outage of these services cannot blank the page.
 external_services:
   github_readme_stats_url: https://github-readme-stats.vercel.app
   github_profile_trophy_url: https://github-profile-trophy.vercel.app

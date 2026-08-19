@@ -46,16 +46,18 @@ test("mobile navbar can expand/collapse", async ({ page }, testInfo) => {
   await expect(nav).not.toHaveClass(/show/);
 });
 
-test("repositories page renders external stat cards with deterministic fixtures", async ({ page }) => {
+test("repositories page renders repo cards from local data without external image services", async ({ page }) => {
   await preparePage(page, "light");
   await page.goto("/al-folio/repositories/", { waitUntil: "networkidle" });
   await stabilizeVisuals(page);
 
-  const repoImages = page.locator('img[src*="github-readme-stats"], img[src*="github-profile-trophy"]');
-  await expect(repoImages.first()).toBeVisible();
+  const repoCards = page.locator(".repo-card");
+  await expect(repoCards.first()).toBeVisible();
+  expect(await repoCards.count()).toBeGreaterThan(0);
 
-  const renderedCount = await repoImages.evaluateAll((images) => images.filter((img) => img.complete && img.naturalWidth > 0).length);
-  expect(renderedCount).toBeGreaterThan(0);
+  // Cards are built from _data/repo_cards.yml, so an outage of a stats service cannot blank the page.
+  const externalStatImages = page.locator('img[src*="github-readme-stats"], img[src*="github-profile-trophy"]');
+  expect(await externalStatImages.count()).toBe(0);
 });
 
 test("blog pagination uses core Tailwind-native styling contract", async ({ page }) => {

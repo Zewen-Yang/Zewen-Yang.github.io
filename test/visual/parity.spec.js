@@ -5,7 +5,8 @@ const routes = [
   { path: "al-folio/", id: "home" },
   { path: "al-folio/projects/", id: "projects" },
   { path: "al-folio/publications/", id: "publications" },
-  { path: "al-folio/repositories/", id: "repositories" },
+  // The repositories page intentionally diverges from the v0.16 baseline: it renders local repo
+  // cards instead of github-readme-stats images, so a pixel comparison is not meaningful.
 ];
 
 test.beforeEach(async ({}, testInfo) => {
@@ -21,12 +22,6 @@ for (const theme of ["light", "dark"]) {
       // Tailwind v1 intentionally diverges more from v0.16 publications layout on mobile.
       if (route.id === "publications" && testInfo.project.name === "mobile") {
         threshold = 0.26;
-      }
-      if (route.id === "repositories" && testInfo.project.name === "desktop" && theme === "dark") {
-        threshold = 0.07;
-      }
-      if (route.id === "repositories" && testInfo.project.name === "mobile" && theme === "dark") {
-        threshold = 0.12;
       }
       expect(ratio).not.toBeNull();
       expect(ratio).toBeLessThan(threshold);

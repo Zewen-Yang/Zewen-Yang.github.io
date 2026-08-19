@@ -1,0 +1,157 @@
+#!/usr/bin/env python
+"""Fetch GitHub metadata for the repositories page into `_data/repo_cards.yml`.
+
+Reads the hand-maintained `github_users` / `github_repos` lists from
+`_data/repositories.yml` and snapshots the fields the page renders, so the
+cards do not depend on any third-party image service at page load.
+
+Set `GITHUB_TOKEN` to raise the anonymous 60 requests/hour API limit.
+
+Usage (from repo root):
+
+    python bin/update_repo_cards.py
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+from datetime import datetime
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+SOURCE_FILE = ROOT / "_data" / "repositories.yml"
+OUTPUT_FILE = ROOT / "_data" / "repo_cards.yml"
+API_ROOT = "https://api.github.com"
+
+# Subset of GitHub's linguist colors; anything else falls back to neutral gray.
+LANGUAGE_COLORS = {
+    "C": "#555555",
+    "C#": "#178600",
+    "C++": "#f34b7d",
+    "CSS": "#563d7c",
+    "Go": "#00add8",
+    "HTML": "#e34c26",
+    "Java": "#b07219",
+    "JavaScript": "#f1e05a",
+    "Jupyter Notebook": "#da5b0b",
+    "Lua": "#000080",
+    "MATLAB": "#e16737",
+    "Python": "#3572a5",
+    "R": "#198ce7",
+    "Ruby": "#701516",
+    "Rust": "#dea584",
+    "Shell": "#89e051",
+    "Swift": "#f05138",
+    "TeX": "#3d6117",
+    "TypeScript": "#3178c6",
+}
+DEFAULT_LANGUAGE_COLOR = "#8b949e"
+
+
+def api_get(path: str) -> dict:
+    request = urllib.request.Request(
+        f"{API_ROOT}{path}",
+        headers={
+            "User-Agent": "al-folio-site-scripts",
+            "Accept": "application/vnd.github+json",
+        },
+    )
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        request.add_header("Authorization", f"Bearer {token}")
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.load(response)
+
+
+def load_source() -> dict:
+    if not SOURCE_FILE.exists():
+        sys.exit(f"{SOURCE_FILE} not found.")
+    data = yaml.safe_load(SOURCE_FILE.read_text(encoding="utf-8")) or {}
+    if not data.get("github_users") and not data.get("github_repos"):
+        sys.exit(f"No github_users or github_repos listed in {SOURCE_FILE}.")
+    return data
+
+
+def fetch_user(login: str) -> dict | None:
+    try:
+        user = api_get(f"/users/{login}")
+    except urllib.error.HTTPError as exc:
+        print(f"  ! skipping user {login}: HTTP {exc.code} {exc.reason}")
+        return None
+    except urllib.error.URLError as exc:
+        sys.exit(f"GitHub API request failed for user {login}: {exc}")
+
+    print(f"  + {login} ({user.get('public_repos', 0)} repos, {user.get('followers', 0)} followers)")
+    return {
+        "login": user.get("login"),
+        "name": user.get("name") or user.get("login"),
+        "bio": user.get("bio"),
+        "location": user.get("location"),
+        "avatar_url": user.get("avatar_url"),
+        "html_url": user.get("html_url"),
+        "public_repos": user.get("public_repos", 0),
+        "followers": user.get("followers", 0),
+    }
+
+
+def fetch_repo(full_name: str) -> dict | None:
+    try:
+        repo = api_get(f"/repos/{full_name}")
+    except urllib.error.HTTPError as exc:
+        print(f"  ! skipping {full_name}: HTTP {exc.code} {exc.reason}")
+        return None
+    except urllib.error.URLError as exc:
+        sys.exit(f"GitHub API request failed for repo {full_name}: {exc}")
+
+    language = repo.get("language")
+    stars = repo.get("stargazers_count", 0)
+    print(f"  + {repo.get('full_name')} ({language or 'no language'}, {stars} stars)")
+    return {
+        "full_name": repo.get("full_name"),
+        "name": repo.get("name"),
+        "owner": (repo.get("owner") or {}).get("login"),
+        "description": repo.get("description"),
+        "html_url": repo.get("html_url"),
+        "homepage": repo.get("homepage") or None,
+        "language": language,
+        "language_color": LANGUAGE_COLORS.get(language, DEFAULT_LANGUAGE_COLOR) if language else None,
+        "stars": stars,
+        "forks": repo.get("forks_count", 0),
+        "archived": bool(repo.get("archived")),
+        "pushed_at": (repo.get("pushed_at") or "")[:10] or None,
+    }
+
+
+def main() -> None:
+    source = load_source()
+
+    print("Fetching GitHub users...")
+    users = [card for login in source.get("github_users") or [] if (card := fetch_user(login))]
+
+    print("Fetching GitHub repositories...")
+    repos = [card for name in source.get("github_repos") or [] if (card := fetch_repo(name))]
+
+    if not users and not repos:
+        sys.exit("Nothing could be fetched from the GitHub API; leaving the existing data file untouched.")
+
+    payload = {
+        "metadata": {"last_updated": datetime.now().strftime("%Y-%m-%d")},
+        "users": users,
+        "repos": repos,
+    }
+
+    with OUTPUT_FILE.open("w", encoding="utf-8") as handle:
+        handle.write("# Generated by bin/update_repo_cards.py -- do not edit by hand.\n")
+        handle.write("# Edit _data/repositories.yml to change which users/repos are shown.\n")
+        yaml.dump(payload, handle, width=1000, sort_keys=False, allow_unicode=True)
+    print(f"Wrote {len(users)} user(s) and {len(repos)} repo(s) to {OUTPUT_FILE.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()

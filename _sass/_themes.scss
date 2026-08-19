@@ -199,6 +199,56 @@ html blockquote {
 }
 
 /*******************************************************************************
+ * Hover affordance — one color everywhere (MarkupLinkUrl, Cyan)
+ *
+ * al_folio_core only honors --global-hover-color on the navbar, the dropdowns
+ * and the toolbar toggles; content links, social icons, footer links and the
+ * post/card links fall back to --global-theme-color, i.e. they "hover" to the
+ * exact accent they already sit at. The gem's own Tailwind base layer has it
+ * right (`a:hover { color: var(--global-hover-color) }`) but that declaration
+ * lives in `@layer base`, and an unlayered rule beats any layered one
+ * regardless of source order — so `a:hover` from _typography.scss wins.
+ *
+ * The `html` prefix is what makes these stick: this file is imported before the
+ * rules it corrects, so each selector has to outrank its upstream counterpart
+ * rather than merely tie it.
+ *
+ * Only text/icon/underline colors are unified. Accent *fills* (button
+ * backgrounds, pagination, active states) keep --global-theme-color, since
+ * cyan-on-pink would be unreadable.
+ ******************************************************************************/
+
+html a:hover,
+html table.table a:hover,
+html footer.fixed-bottom a:hover,
+html .post-list li a:hover,
+html .post .post-tags a:hover,
+html .post-description a:hover,
+html .featured-posts a:hover,
+html .featured-posts a:hover .card-title,
+html .projects a:hover .card-title {
+  color: var(--global-hover-color);
+}
+
+/* Publication link buttons are outlined, not filled, so both the label and the
+   border follow the hover color. */
+html .publications ol.bibliography li .links a.btn:hover {
+  color: var(--global-hover-color);
+  border-color: var(--global-hover-color);
+}
+
+/* Social icons color the ::before glyph rather than the anchor itself. */
+html .social .contact-icons a:hover i::before,
+html .navbar.navbar-light .navbar-brand.social a:hover i::before {
+  color: var(--global-hover-color);
+}
+
+/* distill's link affordance is its underline, not the text color. */
+html .distill a:hover {
+  border-bottom-color: var(--global-hover-color);
+}
+
+/*******************************************************************************
  * Site-specific layout overrides (unrelated to the palette)
  ******************************************************************************/
 
