@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-28'
+  last_updated: '2026-08-19'
 papers:
   DbuBsVUAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -9,24 +9,16 @@ papers:
     citations: 30
     title: Consensus control of multiple AUVs recovery system under switching topologies and time delays
     year: '2019'
-  DbuBsVUAAAAJ:3s1wT3WcHBgC:
-    citations: 0
-    title: 'Quality or Quantity? Error-Informed Selective Online Learning with Gaussian Processes in Multi-Agent Systems: Extended Version'
-    year: '2026'
   DbuBsVUAAAAJ:4DMP91E08xMC:
     citations: 4
     title: Backstepping Control of the Underactuated AUV in Horizontal Plane Trajectory Tracking
     year: '2017'
-  DbuBsVUAAAAJ:4OULZ7Gr8RgC:
-    citations: 14
-    title: 'Safe flow matching: Robot motion planning with control barrier functions'
-    year: '2025'
   DbuBsVUAAAAJ:4TOpqqG69KYC:
     citations: 4
     title: Design of Mini - Plant Factory System Based on Embedded Controller
     year: '2017'
   DbuBsVUAAAAJ:7PzlFSSx8tAC:
-    citations: 5
+    citations: 6
     title: Horizontal Trajectory Tracking Control of AUV Based on High Gain Observer
     year: '2017'
   DbuBsVUAAAAJ:9ZlFYXVOiuMC:
@@ -34,39 +26,39 @@ papers:
     title: Research on Depth Control of AUV Based on Backstepping
     year: '2018'
   DbuBsVUAAAAJ:BqipwSGYUEgC:
-    citations: 14
+    citations: 17
     title: Whom to Trust? Elective Learning for Distributed Gaussian Process Regression
     year: '2024'
   DbuBsVUAAAAJ:D03iK_w7-QYC:
-    citations: 0
+    citations: 1
     title: Residual Reinforcement Learning for Robot Teleoperation under Stochastic Delays
     year: '2026'
-  DbuBsVUAAAAJ:GnPB-g6toBAC:
-    citations: 2
-    title: 'Asynchronous Distributed Gaussian Process Regression for Online Learning and Dynamical Systems: Complementary Document'
-    year: '2024'
+  DbuBsVUAAAAJ:EUQCXRtRnyEC:
+    citations: 0
+    title: Whom to trust? selective online learning in multi-agent systems with prior-aware gaussian process regression
+    year: '2026'
   DbuBsVUAAAAJ:HDshCWvjkbEC:
     citations: 0
     title: Research on Depth Control of AUV Based on Backstepping Neural Network
     year: '2018'
   DbuBsVUAAAAJ:HoB7MX3m0LUC:
-    citations: 1
-    title: Constraint-Consistent Control of Task-Based and Kinematic RCM Constraints for Surgical Robots
+    citations: 2
+    title: Constraint-consistent control of task-based and kinematic RCM constraints for surgical robots [J]
     year: '2025'
   DbuBsVUAAAAJ:IWHjjKOFINEC:
     citations: 0
     title: Research on gesture recognition and classification of dual-tree complex wavelet and spatial information
     year: '2018'
   DbuBsVUAAAAJ:IjCSPb-OGe4C:
-    citations: 44
-    title: Trajectory Tracking Control of UUV Based on Backstepping Sliding Mode With Fuzzy Switching Gain in Diving Plane.
+    citations: 43
+    title: Trajectory tracking control of UUV based on backstepping sliding mode with fuzzy switching gain in diving plane
     year: '2019'
   DbuBsVUAAAAJ:JV2RwH3_ST0C:
     citations: 4
     title: Distributed Event-Triggered Online Learning for Multi-Agent System Control using Gaussian Process Regression
     year: '2023'
   DbuBsVUAAAAJ:KlAtU1dfN6UC:
-    citations: 55
+    citations: 60
     title: Cooperative control of uncertain multiagent systems via distributed Gaussian processes
     year: '2022'
   DbuBsVUAAAAJ:L8Ckcad2t8MC:
@@ -77,20 +69,16 @@ papers:
     citations: 6
     title: Coordinated control for trajectory tracking of multiple UUVs with input saturation
     year: '2019'
-  DbuBsVUAAAAJ:M3NEmzRMIkIC:
-    citations: 4
-    title: 'Gaussian Process-Based Event-Triggered Online Learning with Computational Delays for Control of Unknown Systems: Extended Version'
-    year: '2023'
   DbuBsVUAAAAJ:M3ejUd6NZC8C:
     citations: 6
     title: Research status of Markov theory in unmanned systems
     year: '2018'
   DbuBsVUAAAAJ:NMxIlDl6LWMC:
-    citations: 9
+    citations: 10
     title: AI Readiness in Healthcare through Storytelling XAI
     year: '2024'
   DbuBsVUAAAAJ:NaGl4SEjCO4C:
-    citations: 4
+    citations: 5
     title: Protocol for implementing the nested model for AI design and validation in compliance with AI regulations
     year: '2025'
   DbuBsVUAAAAJ:QIV2ME_5wuYC:
@@ -98,15 +86,15 @@ papers:
     title: Control of Plant Factory Based on Singular Perturbation
     year: '2018'
   DbuBsVUAAAAJ:R3hNpaxXUhUC:
-    citations: 12
-    title: Learning-based control for PMSM using distributed Gaussian processes with optimal aggregation strategy
+    citations: 13
+    title: Learning-based control for pmsm using distributed gaussian processes with optimal aggregation strategy
     year: '2023'
   DbuBsVUAAAAJ:RHpTSmoSYBkC:
-    citations: 12
+    citations: 16
     title: Cooperative Learning with Gaussian Processes for Euler-Lagrange Systems Tracking Control under Switching Topologies
     year: '2024'
   DbuBsVUAAAAJ:RYcK_YlVTxYC:
-    citations: 3
+    citations: 5
     title: Persona adaptable strategies make large language models tractable
     year: '2024'
   DbuBsVUAAAAJ:Se3iqnhoufwC:
@@ -134,7 +122,7 @@ papers:
     title: Fine alignment algorithm for UUVs with a large misalignment angle
     year: '2019'
   DbuBsVUAAAAJ:WF5omc3nYNoC:
-    citations: 41
+    citations: 44
     title: Virtual leader based path tracking control for Multi-UUV considering sampled-data delays and packet losses
     year: '2020'
   DbuBsVUAAAAJ:Wp0gIr-vW9MC:
@@ -162,15 +150,19 @@ papers:
     title: Coordinated Control of Multiple AUVs with Nonconvex Control Input Constraints
     year: '2022'
   DbuBsVUAAAAJ:_FxGoFyzp5QC:
-    citations: 33
+    citations: 34
     title: Formation control of leader-following multi-UUVs with uncertain factors and time-varying delays
     year: '2019'
   DbuBsVUAAAAJ:_Qo2XoVZTnwC:
-    citations: 20
+    citations: 24
     title: Decentralized event-triggered online learning for safe consensus control of multi-agent systems with Gaussian process regression
     year: '2024'
-  DbuBsVUAAAAJ:a0OBvERweLwC:
+  DbuBsVUAAAAJ:_xSYboBqXhAC:
     citations: 0
+    title: Kernel-based Online Learning for PMSMs Safe Control with Partial Observation
+    year: '2025'
+  DbuBsVUAAAAJ:a0OBvERweLwC:
+    citations: 1
     title: A Multi-Technique Approach for Improving Summary Polar Diagrams
     year: '2026'
   DbuBsVUAAAAJ:aqlVkmm33-oC:
@@ -178,13 +170,13 @@ papers:
     title: Study on Initial Alignment Method Basedon Central Difference Calman Filter
     year: '2016'
   DbuBsVUAAAAJ:bEWYMUwI8FkC:
-    citations: 7
+    citations: 8
     title: Interpretable molecular encodings and representations for machine learning tasks
     year: '2024'
-  DbuBsVUAAAAJ:blknAaTinKkC:
-    citations: 7
-    title: 'Cooperative Online Learning for Multi-Agent System Control via Gaussian Processes with Event-Triggered Mechanism: Extended Version'
-    year: '2023'
+  DbuBsVUAAAAJ:bFI3QPDXJZMC:
+    citations: 2
+    title: Quality or Quantity? Error-Informed Selective Online Learning with Gaussian Processes in Multi-Agent Systems
+    year: '2026'
   DbuBsVUAAAAJ:cFHS6HbyZ2cC:
     citations: 0
     title: 'Resilient Online Learning-based Control with Gaussian Process under Denial of Service: Complementary Document'
@@ -194,23 +186,23 @@ papers:
     title: Discrete-time Path Tracking Control of Multiple UUVs Based on Virtual Leader under Time Varying Delay
     year: '2018'
   DbuBsVUAAAAJ:dfsIfKJdRG4C:
-    citations: 4
-    title: 'SafeFlow: Safe Robot Motion Planning with Flow Matching via Control Barrier Functions'
+    citations: 22
+    title: 'SafeFlow: Safe robot motion planning with flow matching via control barrier functions'
     year: '2025'
   DbuBsVUAAAAJ:dhFuZR0502QC:
     citations: 0
     title: Optimal Control of Plant Factory Based on Energy Perspective
     year: '2018'
   DbuBsVUAAAAJ:e5wmG9Sq2KIC:
-    citations: 11
+    citations: 12
     title: Torque-induced-overshoot reduction inspired compensator for PMSMs using motor-physics embedded gaussian process regression
     year: '2024'
   DbuBsVUAAAAJ:eQOLeE2rZwMC:
-    citations: 62
+    citations: 64
     title: Trajectory tracking control of an underactuated AUV based on backstepping sliding mode with state prediction
     year: '2019'
   DbuBsVUAAAAJ:f2IySw72cVMC:
-    citations: 4
+    citations: 9
     title: Asynchronous distributed Gaussian process regression
     year: '2025'
   DbuBsVUAAAAJ:fPk4N6BV_jEC:
@@ -226,7 +218,7 @@ papers:
     title: Design of Aeroponic Control System for Miniature Plant
     year: '2017'
   DbuBsVUAAAAJ:hMod-77fHWUC:
-    citations: 17
+    citations: 29
     title: Cooperative online learning for multiagent system control via gaussian processes with event-triggered mechanism
     year: '2024'
   DbuBsVUAAAAJ:hqOjcs7Dif8C:
@@ -234,7 +226,7 @@ papers:
     title: Leader-following group consensus of Multi-agent systems with different time delays
     year: '2021'
   DbuBsVUAAAAJ:iH-uZ7U-co4C:
-    citations: 1
+    citations: 2
     title: Kernel-based Learning for Safe Control of Discrete-Time Unknown Systems under Incomplete Observations
     year: '2024'
   DbuBsVUAAAAJ:j3f4tGmQtD8C:
@@ -242,11 +234,11 @@ papers:
     title: 'Pri-GP: Prior-Aware Distributed Gaussian Process Regression'
     year: '2023'
   DbuBsVUAAAAJ:k_IJM867U9cC:
-    citations: 17
+    citations: 19
     title: A nested model for AI design and validation
     year: '2024'
   DbuBsVUAAAAJ:lSLTfruPkqcC:
-    citations: 7
+    citations: 6
     title: 'Holistic forecasting for future pandemics: a review of pathogens, models, and data'
     year: '2025'
   DbuBsVUAAAAJ:mB3voiENLucC:
@@ -258,7 +250,7 @@ papers:
     title: Backstepping Sliding Mode Control of the Underactuated AUV in Horizontal Plane Trajectory Tracking Under the Time-varying Disturbance
     year: '2017'
   DbuBsVUAAAAJ:maZDTaKrznsC:
-    citations: 21
+    citations: 25
     title: Can learning deteriorate control? Analyzing computational delays in Gaussian process-based event-triggered online learning
     year: '2023'
   DbuBsVUAAAAJ:ns9cj8rnVeAC:
@@ -270,7 +262,7 @@ papers:
     title: 'Prompt2Auto: From Motion Prompt to Automated Control via Geometry-Invariant One-Shot Gaussian Process Learning'
     year: '2025'
   DbuBsVUAAAAJ:pyW8ca7W8N0C:
-    citations: 5
+    citations: 7
     title: Streaming generated gaussian process experts for online learning and control
     year: '2026'
   DbuBsVUAAAAJ:qUcmZB5y_30C:
@@ -290,15 +282,15 @@ papers:
     title: A Learning-based Online Controller Tuning Method for Electric Motors using Gaussian Processes
     year: '2024'
   DbuBsVUAAAAJ:rO6llkc54NcC:
-    citations: 1
+    citations: 2
     title: 'Safe-Night VLA: Seeing the Unseen via Thermal-Perceptive Vision-Language-Action Models for Safety-Critical Manipulation'
     year: '2026'
   DbuBsVUAAAAJ:roLk4NBRz8UC:
-    citations: 37
+    citations: 36
     title: "Two\u2010dimensional optimal path planning for autonomous underwater vehicle using a whale optimization algorithm"
     year: '2021'
   DbuBsVUAAAAJ:u-x6o8ySG0sC:
-    citations: 17
+    citations: 18
     title: "A novel path planning for AUV based on objects\u2019 motion parameters predication"
     year: '2018'
   DbuBsVUAAAAJ:u5HHmVD_uO8C:
@@ -310,11 +302,11 @@ papers:
     title: Safe Consensus of Cooperative Manipulation with Hierarchical Event-Triggered Control Barrier Functions
     year: '2026'
   DbuBsVUAAAAJ:ufrVoPGSRksC:
-    citations: 22
-    title: Distributed learning consensus control for unknown nonlinear multi-agent systems based on gaussian processes
+    citations: 25
+    title: Distributed learning consensus control for unknown nonlinear multi-agent systems based on Gaussian processes
     year: '2021'
   DbuBsVUAAAAJ:vV6vV6tmYwMC:
-    citations: 4
+    citations: 7
     title: 'Safe event-triggered control of unmanned surface vehicles with Gaussian processes: Resilience in denial of service attacks and uncertain dynamics'
     year: '2025'
   DbuBsVUAAAAJ:yD5IFk8b50cC:
@@ -322,8 +314,8 @@ papers:
     title: 'Machine Learning based Controller using Gaussian Process Regression in Electric Motors: Interpretability, Safety and Reliability'
     year: '2026'
   DbuBsVUAAAAJ:zA6iFVUQeVQC:
-    citations: 1
-    title: 'UniConFlow: A Unified Constrained Flow-Matching Framework for Certified Motion Planning'
+    citations: 2
+    title: 'Uniconflow: A unified constrained flow-matching framework for certified motion planning'
     year: '2025'
   DbuBsVUAAAAJ:zYLM7Y9cAGgC:
     citations: 4

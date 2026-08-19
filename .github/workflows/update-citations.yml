@@ -52,14 +52,20 @@ jobs:
           timeout 90 python bin/update_scholar_citations.py
           status=$?
           end_time=$(date)
+          set -e
           if [ $status -eq 0 ]; then
             echo "✅ Citation update succeeded (started at $start_time, ended at $end_time)."
             echo "✅ Citation update succeeded." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Citation update script failed with exit code $status (started at $start_time, ended at $end_time)."
-            echo "❌ Citation update script failed with exit code $status." >> $GITHUB_STEP_SUMMARY
+            exit 0
           fi
-          set -e
+          echo "❌ Citation update script failed with exit code $status (started at $start_time, ended at $end_time)."
+          {
+            echo "❌ Citation update script failed with exit code $status."
+            echo ""
+            echo "\`_data/citations.yml\` is now stale — the publication badges keep showing the last committed counts."
+            echo "Google Scholar commonly blocks GitHub Actions runners; refresh locally with \`python bin/update_scholar_citations.py\` and commit the result."
+          } >> $GITHUB_STEP_SUMMARY
+          exit $status
 
       - name: Save new citations.yml hash
         id: after
