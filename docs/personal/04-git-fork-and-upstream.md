@@ -70,19 +70,62 @@ git push            # tracking is already set, no need for -u again
 
 ## Pulling al-folio updates later
 
+Do this every few months, or when [alshedivat/al-folio](https://github.com/alshedivat/al-folio/releases)
+publishes a new release. There are **two layers**. Gems are the theme; `upstream/main`
+is only the thin starter (CI, docs, sample posts). Follow gems first. Do not habitually
+`git merge upstream/main` onto your personalized `main`.
+
+### 1) Theme / feature updates (usual path)
+
 ```bash
 git fetch upstream
-git merge upstream/main      # or: git rebase upstream/main
-# resolve any conflicts, then:
-git add -A
-git commit                   # only needed if merge stopped for conflicts
-git push
+git show upstream/main:Gemfile   # copy the :al_folio_plugins pins
 ```
 
-Conflicts usually appear in files you personalized (`_config.yml`, `_data/cv.yml`,
-content under `_pages`/`_news`/`_posts`). Keep your values, take upstream's structural
-changes. Because v1 runtime lives in gems (see [README](README.md)), most upstream code
-changes arrive via `bundle update`, not via merge — so content conflicts stay small.
+1. Paste those pins into your `Gemfile`. If upstream added gems (`al_rtl`, `al_marimo`, …),
+   add the same names under `plugins:` in `_config.yml`.
+2. Keep your personal `_config.yml` values (`url`, `baseurl`, name, socials).
+3. Install and check:
+
+```bash
+bundle install
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8   # audit CLI needs UTF-8
+bundle exec al-folio upgrade audit --no-fail
+bundle exec al-folio upgrade overrides audit
+```
+
+4. If an override is **stale**, port upstream into your local copy while keeping your
+   customization, then acknowledge:
+
+```bash
+bundle exec al-folio upgrade overrides diff _includes/head.liquid
+# edit the local file, then:
+bundle exec al-folio upgrade overrides accept PATH
+```
+
+You currently override `_includes/head.liquid` (default dark theme), `_layouts/about.liquid`,
+and `_sass/_themes.scss`. See [03 — Theming & overrides](03-theming-overrides.md).
+
+`bundle update` alone will **not** bump `al_*` gems: they are pinned with `= 1.0.x`.
+
+### 2) Starter / CI / docs (only when you need it)
+
+Merge on a **side branch**, never straight onto `main`:
+
+```bash
+git checkout -b sync-al-folio
+git merge upstream/main
+```
+
+Keep yours: `_pages`, `_news`, `_bibliography`, `_data`, personal `_config.yml` values,
+and the three override files. Take upstream's: `Gemfile` pins, `.github/workflows` if
+deploy/tests broke, `docs/` if you care. Skip if you do not want them: `readme_preview/`,
+star-history SVGs, official `_posts` demos, README showcase, dummy Scholar citation bumps.
+
+After conflicts are resolved, merge the branch into `main` and `git push origin main`.
+
+GitHub's **Sync fork** button is the same as merging `upstream/main`. Use the gem path
+above instead for day-to-day updates.
 
 ## GitHub Pages
 

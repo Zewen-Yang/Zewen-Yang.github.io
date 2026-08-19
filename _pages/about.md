@@ -34,4 +34,4 @@ My work lies at the intersection of **Machine Learning** and **Robotics**, drive
 I enjoy moving between building methods that hold up in the real world and exploring the deeper scientific questions behind them.
 I also care deeply about education and research, and find it especially rewarding to work alongside passionate people and ambitious students, growing together with them.
 
-I am always glad to connect with others who share these interests, whether for collaboration, projects, research, or simply a good conversation. Feel free to [reach out](mailto:zewenreal@gmail.com).
+I am always glad to connect with others who share these interests, whether for collaboration, projects, research, or simply a good conversation. Feel free to {% al_email_protect_link site.data.socials.email %}.

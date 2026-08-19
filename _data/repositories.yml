@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Zewen-Yang
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Zewen-Yang/SkyGP
+  - Zewen-Yang/EIGP
+  - Zewen-Yang/Pri-GP
+  - Zewen-Yang/Online-Pri-GP
+  - Zewen-Yang/webmujoco
+  - Zewen-Yang/ResearchMate
