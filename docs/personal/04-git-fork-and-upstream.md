@@ -78,14 +78,14 @@ is only the thin starter (CI, docs, sample posts). Follow gems first. Do not hab
 ### 1) Theme / feature updates (usual path)
 
 ```bash
-git fetch upstream
-git show upstream/main:Gemfile   # copy the :al_folio_plugins pins
+./bin/show_upstream_plugin_pins.sh
 ```
 
-1. Paste those pins into your `Gemfile`. If upstream added gems (`al_rtl`, `al_marimo`, …),
-   add the same names under `plugins:` in `_config.yml`.
-2. Keep your personal `_config.yml` values (`url`, `baseurl`, name, socials).
-3. Install and check:
+Copy the upstream `:al_folio_plugins` pins into your `Gemfile`. If upstream added gems (`al_rtl`, `al_marimo`, …),
+add the same names under `plugins:` in `_config.yml`.
+
+1. Keep your personal `_config.yml` values (`url`, `baseurl`, name, socials).
+2. Install and check:
 
 ```bash
 bundle install
@@ -94,7 +94,7 @@ bundle exec al-folio upgrade audit --no-fail
 bundle exec al-folio upgrade overrides audit
 ```
 
-4. If an override is **stale**, port upstream into your local copy while keeping your
+3. If an override is **stale**, port upstream into your local copy while keeping your
    customization, then acknowledge:
 
 ```bash

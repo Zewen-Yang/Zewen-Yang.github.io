@@ -76,6 +76,17 @@ the title/badge becomes clickable even when there's no DOI:
 html = {https://dl.acm.org/doi/10.5555/3635637.3663066},
 ```
 
+The Scholar citation badge needs `google_scholar_id` (the cluster id after the colon in
+`_data/citations.yml`). After adding papers, refresh citations then fill ids:
+
+```bash
+python3 bin/update_scholar_citations.py   # writes _data/citations.yml
+python3 bin/fill_scholar_ids.py           # dry-run title match
+python3 bin/fill_scholar_ids.py --write   # insert google_scholar_id into papers.bib
+```
+
+Weak matches are skipped on purpose (a wrong id links the badge to the wrong paper).
+
 ### Gotcha: importing from RIS (`TY  - JOUR ...`)
 
 A RIS export is **not** BibTeX. Convert it (the `TY  - JOUR` / `AU  -` / `TI  -` block)
@@ -168,6 +179,18 @@ _pages/awards.md  # awards list page (linked from the CV)
 
 Follow the format of existing example files: YAML front matter first, then Markdown.
 Blog posts are named `YYYY-MM-DD-slug.md`.
+
+## Repositories
+
+`_data/repositories.yml` lists which GitHub repos appear on `/repositories/`. To see
+what you have (non-forks, newest first):
+
+```bash
+python3 bin/list_github_repos.py
+python3 bin/list_github_repos.py --yaml   # pasteable github_repos: snippet
+```
+
+Then edit the list by hand — do not dump every repo onto the page.
 
 ## Validate
 

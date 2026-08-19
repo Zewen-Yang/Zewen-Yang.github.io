@@ -54,16 +54,44 @@ for (const libraryKey of ["tikzjax", "tocbot"]) {
 }
 
 const gemfile = read("Gemfile");
-if (!/gem 'al_math', '= 1\.0\.1'/.test(gemfile)) {
-  failures.push("`Gemfile` should pin `al_math` to released version `1.0.1`.");
+if (!/gem 'al_math', '= 1\.0\.2'/.test(gemfile)) {
+  failures.push("`Gemfile` should pin `al_math` to released version `1.0.2`.");
 }
 if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
   failures.push("`Gemfile` must not use git-branch pin for `al_math`; use released gem version.");
 }
 
+const registeredOverrides = new Set();
+if (exists(".al-folio-overrides.yml")) {
+  for (const match of read(".al-folio-overrides.yml").matchAll(/^\s{2}([^:\s][^:]*):\s*$/gm)) {
+    registeredOverrides.add(match[1].replaceAll("\\", "/"));
+  }
+}
+
+const listFiles = (relPath) => {
+  const absPath = path.join(root, relPath);
+  const stats = fs.statSync(absPath);
+  if (stats.isFile()) {
+    return [relPath.replaceAll("\\", "/")];
+  }
+  return fs
+    .readdirSync(absPath, { recursive: true, withFileTypes: true })
+    .filter((entry) => entry.isFile() && !entry.name.startsWith("."))
+    .map((entry) => {
+      const parent = entry.parentPath || entry.path;
+      return path.relative(root, path.join(parent, entry.name)).replaceAll("\\", "/");
+    });
+};
+
 for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
-  if (exists(forbiddenPath)) {
-    failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
+  if (!exists(forbiddenPath)) {
+    continue;
+  }
+  const unregistered = listFiles(forbiddenPath).filter((relPath) => !registeredOverrides.has(relPath));
+  if (unregistered.length > 0) {
+    failures.push(
+      `Starter must not own core component path \`${forbiddenPath}\` unless every file is listed in \`.al-folio-overrides.yml\` (unregistered: ${unregistered.join(", ")}).`
+    );
   }
 }
 
