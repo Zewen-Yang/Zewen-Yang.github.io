@@ -16,47 +16,86 @@ is `.al-folio-overrides.yml`, and **it must be committed**.
 
 This site currently overrides three files (all owned by `al_folio_core`):
 
-| File                    | Why                                       |
-| ----------------------- | ----------------------------------------- |
-| `_sass/_themes.scss`    | Dracula accent colors + back-to-top tweak |
-| `_includes/head.liquid` | head customization                        |
-| `_layouts/about.liquid` | homepage layout tweak                     |
+| File                    | Why                                                        |
+| ----------------------- | ---------------------------------------------------------- |
+| `_sass/_themes.scss`    | Dracula palette + spec role assignment + back-to-top tweak |
+| `_includes/head.liquid` | head customization + dark-only theme shim                  |
+| `_layouts/about.liquid` | homepage layout tweak                                      |
 
 ## Changing the theme color (Dracula)
 
 There is **no simple config key** for the accent color, so it's done via a local override
-of `_sass/_themes.scss`. The override keeps everything identical to upstream **except**
-the CSS custom properties for the accent/hover/footer colors, which are set to the
-[Dracula palette](https://draculatheme.com):
+of `_sass/_themes.scss`.
 
-```scss
-// Dracula palette
-$dracula-background: #282a36;
-$dracula-current-line: #44475a;
-$dracula-foreground: #f8f8f2;
-$dracula-comment: #6272a4;
-$dracula-purple: #bd93f9;
-$dracula-pink: #ff79c6;
+The site is **dark-only**: `enable_darkmode: false` in `_config.yml` hides the light/dark
+toggle, so the [Dracula palette](https://draculatheme.com) lives directly in `:root` and
+there is no `html[data-theme="dark"]` block. Dark-only is a deliberate choice — every
+Dracula hue is designed for a dark background and fails contrast on white (pink is 2.4:1
+against `#fff`, well under the 4.5:1 needed for body text), so a light variant would have
+to abandon the palette anyway.
 
-:root {
-  --global-theme-color: #{$dracula-pink}; // main accent
-  --global-hover-color: #{$dracula-pink};
-  --global-footer-bg-color: #{$dracula-background};
-  --global-footer-text-color: #{$dracula-purple};
-  --global-footer-link-color: #{$dracula-pink};
-  // ... everything else mirrors upstream ...
-}
+### Role assignment follows the official spec
 
-html[data-theme="dark"] {
-  --global-bg-color: #{$dracula-background};
-  // ... dark-mode variants ...
-}
-```
+al-folio funnels nearly every accent through a single token, `--global-theme-color`, which
+collapses a 11-color palette onto one hue. The override splits the roles back out using
+[the official Dracula spec](https://spec.draculatheme.com), section 2.2 "Markup (Markdown,
+RST, etc.)" — a web page _is_ markup, so the mapping is taken from the spec rather than
+invented:
 
-To use a **different** palette: keep this file, swap the `$dracula-*` hex values (or add
-your own palette variables), and rebuild. Set both the `:root` (light) **and**
-`html[data-theme="dark"]` blocks since `enable_darkmode: true` in `_config.yml` lets
-visitors toggle modes — each visitor may land in either mode.
+| Spec scope                 | Color             | Applied to                       |
+| -------------------------- | ----------------- | -------------------------------- |
+| `MarkupLinkText`           | Pink `#ff79c6`    | links (`--global-theme-color`)   |
+| `MarkupLinkUrl`            | Cyan `#8be9fd`    | hover (`--global-hover-color`)   |
+| `MarkupHeading`            | Purple `#bd93f9`  | `h1`-`h6` inside `.post article` |
+| `MarkupInlineCode`         | Green `#50fa7b`   | inline `` `code` ``              |
+| `MarkupBlockquote`         | Yellow `#f1fa8c`  | `blockquote`, italic             |
+| `MarkupBold`               | Orange `#ffb86c`  | `strong` / `b` in prose          |
+| `MarkupListBulletOrNumber` | Cyan `#8be9fd`    | list markers                     |
+| `MarkupHorizontalRule`     | Comment `#6272a4` | `hr`                             |
+| `Error` (section 2)        | Red `#ff5555`     | danger blocks                    |
+
+Cyan for hover is not arbitrary: it is ~10:1 against the background versus pink's ~6:1, so
+hovering reads as a brightness step. Swapping pink for purple (5.9:1) would be a hue change
+at the same lightness and barely register.
+
+Two surfaces deviate from a naive reading of the spec, both for contrast:
+
+- **Code background** uses AnsiBlack `#21222c` (spec section 1.2.2), not Selection
+  `#44475a`. Comment `#6272a4` only reaches 1.9:1 against Selection, which makes code
+  comments unreadable; against AnsiBlack it is 3.4:1.
+- **`--global-divider-color`** stays on Selection. `MarkupHorizontalRule` (Comment) is
+  applied to `hr` alone, because that token also drives table borders and card edges, and
+  Comment there lights up every box on the page.
+
+To use a **different** palette, swap the `$dracula-*` hex values in `_sass/_themes.scss` and
+the `--dracula-*` custom properties in `assets/css/dracula-syntax.css`, then rebuild.
+
+### Syntax highlighting
+
+`assets/css/dracula-syntax.css` is a starter-owned (not an override) Rouge theme written
+directly against the spec — each rule carries the spec section it implements, so it can be
+diffed against the document when it changes. It replaces al_folio_core's shipped
+light/dark Pygments pair, which `theme.js` would otherwise swap at runtime.
+
+One trap worth knowing: al_folio_core declares `code { color: var(--global-theme-color) }`
+directly on the `<code>` element. That beats the color inherited from `.highlight`, so any
+text Rouge does **not** wrap in a token span (a fenced block with no language, for
+instance) renders in the link accent unless explicitly overridden. The stylesheet handles
+this at the end of its container block.
+
+### Dark-only requires a `determineComputedTheme` shim
+
+Turning off `enable_darkmode` stops `theme.js` from loading, and two things depend on it:
+
+1. `al_charts`' mermaid/echarts/plotly/vega/diff2html setup scripts call
+   `determineComputedTheme()` **unguarded** — with no definition that is a `ReferenceError`
+   and the chart silently never renders.
+2. `al_search` and core's `common.js` / `no_defer.js` guard the call but fall back to
+   `"light"`, which would give a light palette on a dark page.
+
+The `{% else %}` branch of the `enable_darkmode` block in `_includes/head.liquid` therefore
+sets `data-theme="dark"` statically and defines `determineComputedTheme()` to return
+`"dark"`. If you ever re-enable the toggle, that branch simply stops being emitted.
 
 ### Small CSS tweaks live here too
 

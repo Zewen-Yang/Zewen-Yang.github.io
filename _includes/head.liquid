@@ -56,13 +56,12 @@
 >
 
 <!-- Code Syntax Highlighting -->
-<link
-  defer
-  rel="stylesheet"
-  href="{{ '/assets/css/jekyll-pygments-themes-github.css' | relative_url | bust_file_cache }}"
-  media=""
-  id="highlight_theme_light"
->
+<!--
+  Local override: the site is dark-only, so a single spec-compliant Dracula
+  stylesheet replaces al_folio_core's light/dark Pygments pair that theme.js
+  would otherwise swap at runtime.
+-->
+<link rel="stylesheet" href="{{ '/assets/css/dracula-syntax.css' | relative_url | bust_file_cache }}">
 
 <!-- Styles -->
 
@@ -143,6 +142,30 @@
   >
   <script>
     initTheme();
+  </script>
+{% else %}
+  <!--
+    Local override: dark-only site (enable_darkmode: false), so theme.js is
+    never loaded. Two things still depend on it and would otherwise break:
+
+    1. al_charts' mermaid/echarts/plotly/vega/diff2html setup scripts call
+       `determineComputedTheme()` unguarded — without a definition that is a
+       ReferenceError and the chart never renders.
+    2. al_search and al_folio_core's common.js/no_defer.js guard the call but
+       fall back to "light", which would give a light palette on a dark page.
+
+    Declaring the attributes and the function statically keeps every consumer
+    on the dark palette with no runtime toggle and no flash of light theme.
+  -->
+  <script>
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.setAttribute('data-theme-setting', 'dark');
+    window.determineComputedTheme = function () {
+      return 'dark';
+    };
+    window.determineThemeSetting = function () {
+      return 'dark';
+    };
   </script>
 {% endif %}
 

@@ -1,0 +1,251 @@
+/*******************************************************************************
+ * Dracula syntax highlighting for Rouge (Jekyll's highlighter)
+ *
+ * Token -> color assignments are taken directly from the official specification
+ * at https://spec.draculatheme.com. The section numbers in the comments below
+ * refer to that document, so this file can be diffed against the spec when it
+ * changes.
+ *
+ * This replaces al_folio_core's shipped light/dark Pygments pairs
+ * (jekyll-pygments-themes-github.css / -native.css), which are swapped at
+ * runtime by theme.js. The site is dark-only, so a single stylesheet is enough.
+ ******************************************************************************/
+
+/* Section 1.2.1 — Standard palette */
+:root {
+  --dracula-background: #282a36;
+  --dracula-foreground: #f8f8f2;
+  --dracula-selection: #44475a;
+  --dracula-comment: #6272a4;
+  --dracula-red: #ff5555;
+  --dracula-orange: #ffb86c;
+  --dracula-yellow: #f1fa8c;
+  --dracula-green: #50fa7b;
+  --dracula-purple: #bd93f9;
+  --dracula-cyan: #8be9fd;
+  --dracula-pink: #ff79c6;
+  /* Section 1.2.2 — ANSI */
+  --dracula-ansi-black: #21222c;
+}
+
+/* Code block surface. AnsiBlack rather than Background so the block separates
+   from the page, and rather than Selection so Comment stays legible on it. */
+div.highlighter-rouge,
+figure.highlight,
+.highlight pre,
+pre.highlight {
+  background-color: var(--dracula-ansi-black);
+  color: var(--dracula-foreground);
+}
+
+.highlight ::selection,
+.highlight ::-moz-selection {
+  background-color: var(--dracula-selection);
+}
+
+/* Untokenized text inside a highlighted block. al_folio_core's _utilities.scss
+   declares `code { color: var(--global-theme-color) }` directly on the inner
+   <code> element, which beats the color inherited from .highlight, so any run
+   of text Rouge does not wrap in a token span would render in the link accent
+   (pink) instead of the foreground. */
+.highlight pre code,
+pre.highlight code,
+div.highlighter-rouge pre code {
+  color: var(--dracula-foreground);
+}
+
+/* Section 2.2 — MarkupCodeBlockWithoutSyntax (Orange). A fenced block with no
+   language falls back to the plaintext lexer, which emits no token spans. */
+div.language-plaintext.highlighter-rouge pre code {
+  color: var(--dracula-orange);
+}
+
+/* Line numbers, when `linenos` is enabled. */
+.highlight .lineno,
+.highlight .gl {
+  color: var(--dracula-comment);
+  user-select: none;
+}
+
+/* Section 14 — Variables: Variable, ObjectKeys (Foreground).
+   Also the default for any token this file does not name explicitly. */
+.highlight,
+.highlight .n,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .vm,
+.highlight .nx,
+.highlight .nl,
+.highlight .nn,
+.highlight .py,
+.highlight .w {
+  color: var(--dracula-foreground);
+}
+
+/* Section 10 — Punctuation: BracketsParensBraces (Foreground) */
+.highlight .p {
+  color: var(--dracula-foreground);
+}
+
+/* Section 4 — Comments: Comment (Comment) */
+.highlight .c,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs,
+.highlight .cd {
+  color: var(--dracula-comment);
+}
+
+/* Section 2 — General: Invalid (Foreground on Red), Error (Red) */
+.highlight .err {
+  color: var(--dracula-foreground);
+  background-color: var(--dracula-red);
+}
+
+/* Section 8 — Keywords: Keyword (Pink), KeywordNew (Pink, Bold)
+   Section 12 — Storage: Storage, Modifiers (Pink) */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr {
+  color: var(--dracula-pink);
+}
+
+/* Section 12 — Storage: Types (Cyan, Italic) */
+.highlight .kt {
+  color: var(--dracula-cyan);
+  font-style: italic;
+}
+
+/* Section 10 — Punctuation: SeparatorsReferencesOrAccessors,
+   StringInterpolationOperators (Pink) */
+.highlight .o,
+.highlight .ow {
+  color: var(--dracula-pink);
+}
+
+/* Section 5 — Constants: Constant (Purple)
+   Section 9 — BuiltInMagicMethodsOrConstants (Purple)
+   Numbers are constants too. */
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .mx,
+.highlight .il,
+.highlight .no,
+.highlight .l,
+.highlight .ld {
+  color: var(--dracula-purple);
+}
+
+/* Section 13 — Strings: String (Yellow) */
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .s1,
+.highlight .ss {
+  color: var(--dracula-yellow);
+}
+
+/* Section 13 — Strings: StringRegExp (Red) */
+.highlight .sr {
+  color: var(--dracula-red);
+}
+
+/* Section 5 — Constants: ConstantEscapeSequences (Pink) */
+.highlight .se {
+  color: var(--dracula-pink);
+}
+
+/* Section 7 — Functions/Methods: FunctionNames (Green) */
+.highlight .nf,
+.highlight .fm {
+  color: var(--dracula-green);
+}
+
+/* Section 7 — Functions/Methods: Decorators (Green, Italic) */
+.highlight .nd {
+  color: var(--dracula-green);
+  font-style: italic;
+}
+
+/* Section 3 — Classes: ClassName (Cyan) */
+.highlight .nc,
+.highlight .ne {
+  color: var(--dracula-cyan);
+}
+
+/* Section 9 — Language Built-ins: BuiltInFunctions (Cyan) */
+.highlight .nb {
+  color: var(--dracula-cyan);
+}
+
+/* Section 3 — Classes: InstanceReservedWords (Purple, Italic) — this/self/super */
+.highlight .bp {
+  color: var(--dracula-purple);
+  font-style: italic;
+}
+
+/* Section 6 — Entities: HtmlTags, CssParentSelectors (Pink) */
+.highlight .nt {
+  color: var(--dracula-pink);
+}
+
+/* Section 6 — Entities: HtmlCssAttributeNames (Green)
+   Section 11 — Configuration languages: Keys are Cyan, but Rouge reuses `.na`
+   for both HTML attributes and YAML keys, so Green is the closer overall fit. */
+.highlight .na {
+  color: var(--dracula-green);
+}
+
+/* Section 2.1 — Diffs */
+.highlight .gd {
+  color: var(--dracula-red);
+}
+
+.highlight .gi {
+  color: var(--dracula-green);
+}
+
+.highlight .gh {
+  color: var(--dracula-purple);
+  font-weight: bold;
+}
+
+.highlight .gu {
+  color: var(--dracula-purple);
+}
+
+.highlight .gr,
+.highlight .gt {
+  color: var(--dracula-red);
+}
+
+.highlight .gp {
+  color: var(--dracula-comment);
+}
+
+.highlight .ge {
+  font-style: italic;
+}
+
+.highlight .gs {
+  font-weight: bold;
+}

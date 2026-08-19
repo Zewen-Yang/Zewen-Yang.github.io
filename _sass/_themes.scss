@@ -2,8 +2,25 @@
  * Themes
  *
  * Local override of al_folio_core's _sass/_themes.scss.
- * Only the accent colors (--global-theme-color / --global-hover-color) are
- * customized to the Dracula palette; everything else mirrors upstream.
+ *
+ * The site is dark-only (`enable_darkmode: false` in _config.yml), so the
+ * Dracula palette lives directly in `:root` and there is no
+ * `html[data-theme="dark"]` block and no light variant.
+ *
+ * Role assignments follow the official Dracula spec (https://spec.draculatheme.com),
+ * section 2.2 "Markup (Markdown, RST, etc.)" — a web document *is* markup, so the
+ * spec's markup scopes map onto page elements without invention:
+ *
+ *   MarkupLinkText            Pink     -> links
+ *   MarkupLinkUrl             Cyan     -> link hover / active affordance
+ *   MarkupHeading             Purple   -> h1-h6
+ *   MarkupInlineCode          Green    -> inline `code`
+ *   MarkupBlockquote          Yellow   -> blockquote (italic)
+ *   MarkupBold                Orange   -> strong / b
+ *   MarkupListBulletOrNumber  Cyan     -> list markers
+ *   MarkupHorizontalRule      Comment  -> hr / dividers
+ *   Error                     Red      -> danger blocks
+ *
  * After editing, run:
  *   bundle exec al-folio upgrade overrides audit
  *   bundle exec al-folio upgrade overrides accept _sass/_themes.scss
@@ -12,72 +29,96 @@
 @use "variables" as v;
 @use "sass:color";
 
-// Dracula palette (https://draculatheme.com)
-$dracula-background: #282a36; // Background
-$dracula-current-line: #44475a; // Current Line / selection
-$dracula-foreground: #f8f8f2; // Foreground text
-$dracula-comment: #6272a4; // Comment (muted blue)
+// Official Dracula palette — spec.draculatheme.com section 1.2.1 (Standard)
+$dracula-background: #282a36;
+$dracula-foreground: #f8f8f2;
+$dracula-selection: #44475a;
+$dracula-comment: #6272a4;
+$dracula-red: #ff5555;
+$dracula-orange: #ffb86c;
+$dracula-yellow: #f1fa8c;
+$dracula-green: #50fa7b;
 $dracula-purple: #bd93f9;
+$dracula-cyan: #8be9fd;
 $dracula-pink: #ff79c6;
-$dracula-blue: $dracula-comment; // alias kept for backwards-compat
+
+// spec section 1.2.2 (ANSI) — used for surfaces that need to sit *below* the
+// page background, e.g. the footer.
+$dracula-ansi-black: #21222c;
+
+// Backwards-compat aliases kept so older local rules keep resolving.
+$dracula-current-line: $dracula-selection;
+$dracula-blue: $dracula-comment;
 
 :root {
-  color-scheme: light;
-  --global-bg-color: #{v.$white-color};
-  --global-code-bg-color: #{v.$code-bg-color-light};
-  --global-text-color: #{v.$black-color};
-  --global-text-color-light: #{v.$grey-color};
+  color-scheme: dark;
+
+  --global-bg-color: #{$dracula-background};
+  // Code sits on AnsiBlack rather than Selection: Comment (#6272a4) only reaches
+  // 1.9:1 against Selection, which makes code comments unreadable, but 3.4:1
+  // against AnsiBlack. It also reads as a recessed surface below the page.
+  --global-code-bg-color: #{$dracula-ansi-black};
+  --global-text-color: #{$dracula-foreground};
+  --global-text-color-light: #{$dracula-comment};
+
+  // MarkupLinkText (Pink) for links, MarkupLinkUrl (Cyan) for the hover state.
+  // Cyan is ~10:1 against the background vs Pink's ~6:1, so hover reads as a
+  // genuine brightness step rather than a same-luminance hue swap.
   --global-theme-color: #{$dracula-pink};
-  --global-hover-color: #{$dracula-pink};
-  --global-hover-text-color: #{v.$white-color};
-  --global-footer-bg-color: #{$dracula-background};
-  --global-footer-text-color: #{$dracula-purple};
+  --global-hover-color: #{$dracula-cyan};
+  // Text drawn *on top of* an accent-colored fill.
+  --global-hover-text-color: #{$dracula-background};
+
+  // MarkupHeading (Purple). Also used by al_folio_core for award borders.
+  --global-highlight-color: #{$dracula-purple};
+
+  --global-footer-bg-color: #{$dracula-ansi-black};
+  --global-footer-text-color: #{$dracula-foreground};
   --global-footer-link-color: #{$dracula-pink};
-  --global-distill-app-color: #{v.$grey-color};
-  --global-divider-color: rgba(0, 0, 0, 0.1);
-  --global-card-bg-color: #{v.$white-color};
-  --global-highlight-color: #{v.$red-color-dark};
+
+  --global-distill-app-color: #{$dracula-foreground};
+  // Structural lines (table borders, card edges, section rules) stay on
+  // Selection. The spec's MarkupHorizontalRule (Comment) is applied to <hr>
+  // specifically further down; using it here too would light up every border
+  // on the page.
+  --global-divider-color: #{$dracula-selection};
+  --global-card-bg-color: #{$dracula-selection};
+
   --global-back-to-top-bg-color: rgba(
-    #{color.channel($dracula-pink, "red", v.$space: rgb)},
-    #{color.channel($dracula-pink, "green", v.$space: rgb)},
-    #{color.channel($dracula-pink, "blue", v.$space: rgb)},
-    0.9
+    #{color.channel($dracula-purple, "red", v.$space: rgb)},
+    #{color.channel($dracula-purple, "green", v.$space: rgb)},
+    #{color.channel($dracula-purple, "blue", v.$space: rgb)},
+    0.95
   );
-  --global-back-to-top-text-color: #{v.$white-color};
-  --global-newsletter-bg-color: #{v.$white-color};
-  --global-newsletter-text-color: #{v.$black-color};
+  --global-back-to-top-text-color: #{$dracula-background};
 
-  --global-tip-block: #42b983;
-  --global-tip-block-bg: #e2f5ec;
-  --global-tip-block-text: #215d42;
-  --global-tip-block-title: #359469;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #fff8d8;
-  --global-warning-block-text: #6b5900;
-  --global-warning-block-title: #b29400;
-  --global-danger-block: #c00;
-  --global-danger-block-bg: #ffe0e0;
-  --global-danger-block-text: #600;
-  --global-danger-block-title: #c00;
+  --global-newsletter-bg-color: #{$dracula-selection};
+  --global-newsletter-text-color: #{$dracula-foreground};
 
-  #light-toggle-system {
-    display: inline-block;
-  }
+  // spec section 2.1 (Diffs) / 2 (General): DiffInserted Green, DiffChanged
+  // Orange, Error Red. Backgrounds are the corresponding hue mixed into the
+  // page background so the blocks stay legible.
+  --global-tip-block: #{$dracula-green};
+  --global-tip-block-bg: #{color.mix($dracula-green, $dracula-background, 12%)};
+  --global-tip-block-text: #{$dracula-foreground};
+  --global-tip-block-title: #{$dracula-green};
+  --global-warning-block: #{$dracula-orange};
+  --global-warning-block-bg: #{color.mix($dracula-orange, $dracula-background, 12%)};
+  --global-warning-block-text: #{$dracula-foreground};
+  --global-warning-block-title: #{$dracula-orange};
+  --global-danger-block: #{$dracula-red};
+  --global-danger-block-bg: #{color.mix($dracula-red, $dracula-background, 12%)};
+  --global-danger-block-text: #{$dracula-foreground};
+  --global-danger-block-title: #{$dracula-red};
 
-  #light-toggle-dark {
-    display: none;
-  }
-
-  #light-toggle-light {
-    display: none;
-  }
-
+  // The theme toggle is not rendered (enable_darkmode: false), but content may
+  // still use .only-light / .only-dark to swap assets per mode.
   .only-light {
-    display: block;
+    display: none;
   }
 
   .only-dark {
-    display: none;
+    display: block;
   }
 
   #back-to-top {
@@ -93,87 +134,6 @@ $dracula-blue: $dracula-comment; // alias kept for backwards-compat
   }
 }
 
-html[data-theme="dark"] {
-  color-scheme: dark;
-  --global-bg-color: #{$dracula-background};
-  --global-code-bg-color: #{$dracula-current-line};
-  --global-text-color: #{$dracula-foreground};
-  --global-text-color-light: #{$dracula-comment};
-  --global-theme-color: #{$dracula-pink};
-  --global-hover-color: #{$dracula-pink};
-  --global-hover-text-color: #{$dracula-background};
-  --global-highlight-color: #{$dracula-purple};
-  --global-footer-bg-color: #{$dracula-current-line};
-  --global-footer-text-color: #{$dracula-purple};
-  --global-footer-link-color: #{$dracula-pink};
-  --global-distill-app-color: #{$dracula-foreground};
-  --global-divider-color: #{$dracula-current-line};
-  --global-card-bg-color: #{$dracula-current-line};
-  --global-back-to-top-bg-color: rgba(
-    #{color.channel($dracula-purple, "red", v.$space: rgb)},
-    #{color.channel($dracula-purple, "green", v.$space: rgb)},
-    #{color.channel($dracula-purple, "blue", v.$space: rgb)},
-    0.95
-  );
-  --global-back-to-top-text-color: #{$dracula-background};
-  --global-newsletter-bg-color: #{v.$grey-color-light};
-  --global-newsletter-text-color: #{v.$grey-color-dark};
-
-  --global-tip-block: #42b983;
-  --global-tip-block-bg: #215d42;
-  --global-tip-block-text: #beffe2;
-  --global-tip-block-title: #e2f5ec;
-  --global-warning-block: #e7c000;
-  --global-warning-block-bg: #6b5900;
-  --global-warning-block-text: #fff2af;
-  --global-warning-block-title: #fff8d8;
-  --global-danger-block: #c00;
-  --global-danger-block-bg: #600;
-  --global-danger-block-text: #ffb9b9;
-  --global-danger-block-title: #ffe0e0;
-
-  .only-light {
-    display: none;
-  }
-
-  .only-dark {
-    display: block;
-  }
-}
-
-html[data-theme-setting="dark"] {
-  #light-toggle-system {
-    display: none;
-  }
-
-  #light-toggle-dark {
-    display: inline-block;
-  }
-
-  #light-toggle-light {
-    display: none;
-  }
-
-  #back-to-top {
-    color: var(--global-back-to-top-text-color);
-    background: var(--global-back-to-top-bg-color);
-  }
-}
-
-html[data-theme-setting="light"] {
-  #light-toggle-system {
-    display: none;
-  }
-
-  #light-toggle-dark {
-    display: none;
-  }
-
-  #light-toggle-light {
-    display: inline-block;
-  }
-}
-
 /* Local override: vanilla-back-to-top computes the inner arrow's size/margin
    from its default 56px diameter, but the theme shrinks the button to 40px
    ($back-to-top-diameter), leaving the SVG pushed against the bottom edge.
@@ -184,58 +144,63 @@ html[data-theme-setting="light"] {
   margin: 25% auto 0;
 }
 
-.fa-half-sun-moon {
-  position: relative;
-  display: inline-block;
+/*******************************************************************************
+ * Dracula spec section 2.2 — Markup
+ *
+ * al_folio_core routes almost every accent through --global-theme-color, which
+ * collapses the palette onto a single hue. These rules hand the spec's markup
+ * scopes back their own colors.
+ ******************************************************************************/
 
-  --fa-font: var(--fa-font-solid);
-  speak: none;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  width: 1em;
-  height: 1em;
+/* MarkupHeading (Purple). The spec also calls for Bold, but .post-title is
+   deliberately kept at weight 400 below, so only the color is applied here. */
+.post article h1,
+.post article h2,
+.post article h3,
+.post article h4,
+.post article h5,
+.post article h6 {
+  color: var(--global-highlight-color);
 }
 
-.fa-half-sun-moon::before,
-.fa-half-sun-moon::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  top: -0.5px;
-  bottom: -0.5px;
-  text-align: center;
-  line-height: 1em;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  font: var(--fa-font);
+/* MarkupInlineCode (Green). `:not(pre) > code` targets inline code only —
+   inside <pre> the per-token colors from dracula-syntax.css take over, and a
+   blanket rule here would fight them. */
+:not(pre) > code {
+  color: #{$dracula-green};
 }
 
-/* Left half: MOON */
-.fa-half-sun-moon::before {
-  content: "\f111";
-  color: var(--global-text-color);
-  clip-path: polygon(0 0, calc(50% - 0.5px) 0, calc(50% - 0.5px) 100%, 0 100%);
+/* MarkupBlockquote (Yellow, Italic). Upstream (_typography.scss) is imported
+   after this file and sets the `border-left` shorthand, which would reset a
+   plain `border-left-color` declared here at equal specificity. The `html`
+   prefix raises specificity so the color sticks regardless of import order. */
+html blockquote {
+  border-left-color: #{$dracula-yellow};
+  color: #{$dracula-yellow};
+  font-style: italic;
 }
 
-/* Right half: SUN */
-.fa-half-sun-moon::after {
-  content: "\f185";
-  color: var(--global-text-color);
-  clip-path: polygon(calc(50% + 0.5px) 0, 100% 0, 100% 100%, calc(50% + 0.5px) 100%);
-  right: -1.5px; /* slight overflow to avoid right-edge clipping */
-  transform: translateX(-1px); /* visually re-center the sun half */
+/* MarkupBold (Orange). Scoped to article prose so it doesn't recolor bold text
+   used as UI chrome (nav, buttons, card titles). */
+.post article strong,
+.post article b {
+  color: #{$dracula-orange};
 }
 
-#light-toggle:hover .fa-half-sun-moon::before {
-  color: var(--global-theme-color);
+/* MarkupListBulletOrNumber (Cyan). */
+.post article ul li::marker,
+.post article ol li::marker {
+  color: #{$dracula-cyan};
 }
 
-#light-toggle:hover .fa-half-sun-moon::after {
-  color: var(--global-theme-color);
+/* MarkupHorizontalRule (Comment). */
+.post article hr {
+  border-top-color: #{$dracula-comment};
 }
+
+/*******************************************************************************
+ * Site-specific layout overrides (unrelated to the palette)
+ ******************************************************************************/
 
 /* Local override: render the page/post title without bold weight.
    The about layout wraps the first name in `.font-weight-bold`, so override
@@ -246,8 +211,8 @@ html[data-theme-setting="light"] {
 }
 
 /* Local override: highlight the author's own name in publications using the
-   theme accent color instead of an underline. Upstream (_publications.scss)
-   styles `.publications ol.bibliography li .author > em` with
+   link color instead of an underline. Upstream (_publications.scss) styles
+   `.publications ol.bibliography li .author > em` with
    `border-bottom: 1px solid`; the extra `div.author` raises specificity so this
    wins regardless of import order. */
 .publications ol.bibliography li div.author > em {
