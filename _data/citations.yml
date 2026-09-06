@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-19'
+  last_updated: '2026-09-06'
 papers:
   DbuBsVUAAAAJ:-f6ydRqryjwC:
     citations: 0
@@ -58,7 +58,7 @@ papers:
     title: Distributed Event-Triggered Online Learning for Multi-Agent System Control using Gaussian Process Regression
     year: '2023'
   DbuBsVUAAAAJ:KlAtU1dfN6UC:
-    citations: 60
+    citations: 65
     title: Cooperative control of uncertain multiagent systems via distributed Gaussian processes
     year: '2022'
   DbuBsVUAAAAJ:L8Ckcad2t8MC:
@@ -86,15 +86,15 @@ papers:
     title: Control of Plant Factory Based on Singular Perturbation
     year: '2018'
   DbuBsVUAAAAJ:R3hNpaxXUhUC:
-    citations: 13
+    citations: 14
     title: Learning-based control for pmsm using distributed gaussian processes with optimal aggregation strategy
     year: '2023'
   DbuBsVUAAAAJ:RHpTSmoSYBkC:
-    citations: 16
+    citations: 17
     title: Cooperative Learning with Gaussian Processes for Euler-Lagrange Systems Tracking Control under Switching Topologies
     year: '2024'
   DbuBsVUAAAAJ:RYcK_YlVTxYC:
-    citations: 5
+    citations: 6
     title: Persona adaptable strategies make large language models tractable
     year: '2024'
   DbuBsVUAAAAJ:Se3iqnhoufwC:
@@ -106,7 +106,7 @@ papers:
     title: Optimal placement of sensors in a miniature plant under variable wind speed
     year: '2018'
   DbuBsVUAAAAJ:Tyk-4Ss8FVUC:
-    citations: 64
+    citations: 65
     title: "Kapur\u2019s entropy for underwater multilevel thresholding image segmentation based on whale optimization algorithm"
     year: '2020'
   DbuBsVUAAAAJ:UeHWp8X0CEIC:
@@ -122,7 +122,7 @@ papers:
     title: Fine alignment algorithm for UUVs with a large misalignment angle
     year: '2019'
   DbuBsVUAAAAJ:WF5omc3nYNoC:
-    citations: 44
+    citations: 45
     title: Virtual leader based path tracking control for Multi-UUV considering sampled-data delays and packet losses
     year: '2020'
   DbuBsVUAAAAJ:Wp0gIr-vW9MC:
@@ -130,11 +130,11 @@ papers:
     title: Design of Nutrient Solution Circulation Control System for Miniature Plant
     year: '2017'
   DbuBsVUAAAAJ:Y0pCki6q_DkC:
-    citations: 41
+    citations: 42
     title: Polar cooperative navigation algorithm for multi-unmanned underwater vehicles considering communication delays
     year: '2018'
   DbuBsVUAAAAJ:YsMSGLbcyi4C:
-    citations: 111
+    citations: 112
     title: Discrete-time coordinated control of leader-following multiple AUVs under switching topologies and communication delays
     year: '2019'
   DbuBsVUAAAAJ:ZHo1McVdvXMC:
@@ -154,7 +154,7 @@ papers:
     title: Formation control of leader-following multi-UUVs with uncertain factors and time-varying delays
     year: '2019'
   DbuBsVUAAAAJ:_Qo2XoVZTnwC:
-    citations: 24
+    citations: 25
     title: Decentralized event-triggered online learning for safe consensus control of multi-agent systems with Gaussian process regression
     year: '2024'
   DbuBsVUAAAAJ:_xSYboBqXhAC:
@@ -165,10 +165,18 @@ papers:
     citations: 1
     title: A Multi-Technique Approach for Improving Summary Polar Diagrams
     year: '2026'
+  DbuBsVUAAAAJ:abG-DnoFyZgC:
+    citations: 0
+    title: Event-triggered Control and Online Learning for Networked Systems under Computational Delays
+    year: '2026'
   DbuBsVUAAAAJ:aqlVkmm33-oC:
     citations: 4
     title: Study on Initial Alignment Method Basedon Central Difference Calman Filter
     year: '2016'
+  DbuBsVUAAAAJ:b0M2c_1WBrUC:
+    citations: 0
+    title: Asynchronous Cooperative Online Learning for Multi-Robot Control under Computational Delays
+    year: '2026'
   DbuBsVUAAAAJ:bEWYMUwI8FkC:
     citations: 8
     title: Interpretable molecular encodings and representations for machine learning tasks
@@ -186,7 +194,7 @@ papers:
     title: Discrete-time Path Tracking Control of Multiple UUVs Based on Virtual Leader under Time Varying Delay
     year: '2018'
   DbuBsVUAAAAJ:dfsIfKJdRG4C:
-    citations: 22
+    citations: 23
     title: 'SafeFlow: Safe robot motion planning with flow matching via control barrier functions'
     year: '2025'
   DbuBsVUAAAAJ:dhFuZR0502QC:
@@ -194,15 +202,15 @@ papers:
     title: Optimal Control of Plant Factory Based on Energy Perspective
     year: '2018'
   DbuBsVUAAAAJ:e5wmG9Sq2KIC:
-    citations: 12
+    citations: 13
     title: Torque-induced-overshoot reduction inspired compensator for PMSMs using motor-physics embedded gaussian process regression
     year: '2024'
   DbuBsVUAAAAJ:eQOLeE2rZwMC:
-    citations: 64
+    citations: 65
     title: Trajectory tracking control of an underactuated AUV based on backstepping sliding mode with state prediction
     year: '2019'
   DbuBsVUAAAAJ:f2IySw72cVMC:
-    citations: 9
+    citations: 10
     title: Asynchronous distributed Gaussian process regression
     year: '2025'
   DbuBsVUAAAAJ:fPk4N6BV_jEC:
@@ -218,7 +226,7 @@ papers:
     title: Design of Aeroponic Control System for Miniature Plant
     year: '2017'
   DbuBsVUAAAAJ:hMod-77fHWUC:
-    citations: 29
+    citations: 30
     title: Cooperative online learning for multiagent system control via gaussian processes with event-triggered mechanism
     year: '2024'
   DbuBsVUAAAAJ:hqOjcs7Dif8C:
@@ -238,7 +246,7 @@ papers:
     title: A nested model for AI design and validation
     year: '2024'
   DbuBsVUAAAAJ:lSLTfruPkqcC:
-    citations: 6
+    citations: 8
     title: 'Holistic forecasting for future pandemics: a review of pathogens, models, and data'
     year: '2025'
   DbuBsVUAAAAJ:mB3voiENLucC:
@@ -250,7 +258,7 @@ papers:
     title: Backstepping Sliding Mode Control of the Underactuated AUV in Horizontal Plane Trajectory Tracking Under the Time-varying Disturbance
     year: '2017'
   DbuBsVUAAAAJ:maZDTaKrznsC:
-    citations: 25
+    citations: 27
     title: Can learning deteriorate control? Analyzing computational delays in Gaussian process-based event-triggered online learning
     year: '2023'
   DbuBsVUAAAAJ:ns9cj8rnVeAC:
@@ -262,7 +270,7 @@ papers:
     title: 'Prompt2Auto: From Motion Prompt to Automated Control via Geometry-Invariant One-Shot Gaussian Process Learning'
     year: '2025'
   DbuBsVUAAAAJ:pyW8ca7W8N0C:
-    citations: 7
+    citations: 9
     title: Streaming generated gaussian process experts for online learning and control
     year: '2026'
   DbuBsVUAAAAJ:qUcmZB5y_30C:
@@ -306,7 +314,7 @@ papers:
     title: Distributed learning consensus control for unknown nonlinear multi-agent systems based on Gaussian processes
     year: '2021'
   DbuBsVUAAAAJ:vV6vV6tmYwMC:
-    citations: 7
+    citations: 9
     title: 'Safe event-triggered control of unmanned surface vehicles with Gaussian processes: Resilience in denial of service attacks and uncertain dynamics'
     year: '2025'
   DbuBsVUAAAAJ:yD5IFk8b50cC:
