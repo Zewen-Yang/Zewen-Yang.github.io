@@ -3,7 +3,7 @@ layout: page
 title: Humanoid-Operated Production at Hannover Messe 2026
 description: Two Agile ONE humanoids working side by side in a live production demo, combining classical 3D vision with diffusion policies. Visited by German Chancellor Friedrich Merz.
 img: assets/img/hm26_merz_agile_robots_booth.jpg
-importance: 2
+importance: 1
 category: Work
 related_publications: false
 ---

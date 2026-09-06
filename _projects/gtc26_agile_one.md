@@ -3,7 +3,7 @@ layout: page
 title: Agile ONE at NVIDIA GTC 2026
 description: Autonomous human-robot interaction on the Agile ONE humanoid, showcased in the GTC 2026 exhibit hall and featured by NVIDIA Robotics.
 img: assets/img/gtc26_agile_one_business_card.jpg
-importance: 1
+importance: 2
 category: Work
 related_publications: false
 ---

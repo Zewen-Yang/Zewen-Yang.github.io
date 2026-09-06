@@ -311,3 +311,15 @@ html .distill a:hover {
 .post article h2.about-section-heading:first-of-type {
   margin-top: 5rem;
 }
+
+/* Local override: equal-height project cards. The gem wraps each card in an <a>
+   between .col and .card.h-100, so height:100% on the card never reaches the
+   stretched column unless the link fills the column too. */
+.projects .col > a {
+  display: flex;
+  height: 100%;
+}
+
+.projects .col > a > .card {
+  width: 100%;
+}
