@@ -2,3 +2,7 @@ nbconvert
 pyyaml
 rendercv[full]
 scholarly
+# scholarly 1.7.x imports `bibtexparser.bibdatabase`, which was removed in bibtexparser 2.0.
+# Without this pin a fresh `pip install -r requirements.txt` makes bin/update_scholar_citations.py
+# crash on import (ModuleNotFoundError) before it ever reaches Google Scholar.
+bibtexparser<2
