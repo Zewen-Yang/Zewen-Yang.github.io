@@ -1,20 +1,9 @@
 cv:
   name: Zewen Yang
-  label: Senior Researcher Scientist
+  headline: Senior Research Scientist
   email: zewenreal@gmail.com
-  location: Munich, Germany
-  image: prof_pic_zewen.jpg
+  location: Plinganserstraße 134, München, Germany
   photo: ../assets/img/prof_pic_zewen.jpg
-  summary:
-    My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
-
-    I am a Senior Research Scientist at Agile Robots in Munich, working at the intersection of machine learning, robotics, and control. I develop Vision-Language-Action models, World Action Models, generative motion-planning methods, and agentic AI frameworks that enable robots to perceive, reason, plan, and act.
-
-    My research has been published in leading venues across machine learning and multi-agent AI (IEEE TNNLS, AAAI, AAMAS), robotics (IEEE T-RO, ICRA, IROS), and control (IEEE TAC, CDC, ACC, L4DC).
-
-    Before joining Agile Robots, I worked on robot learning and teleoperation at the Munich Institute of Robotics and Machine Intelligence at TUM, and applied machine learning to public health research at the Robert Koch Institute. From public health to autonomous robots, the common thread in my work is turning promising machine learning methods into solutions for consequential real-world problems.
-
-    These experiences reinforced my belief that meaningful innovation requires both scientific rigor and engineering depth. I enjoy working across the full path from framing research questions and developing rigorous methods to building and evaluating systems in practice. I also care deeply about education, mentoring, and exchanging ideas with passionate researchers, engineers, and students.
 
   social_networks:
     - network: GitHub
@@ -24,41 +13,38 @@ cv:
     - network: LinkedIn
       username: zewen-yang
 
-  address:
-    street: Plinganserstraße 134
-    city: München
-    region: Bavaria
-    postalCode: 81369
-    countryCode: DE
-
   sections:
+    Summary:
+      - bullet: My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
+      - bullet: I am a Senior Research Scientist at Agile Robots in Munich, working at the intersection of machine learning, robotics, and control. I develop Vision-Language-Action models, World Action Models, generative motion-planning methods, and agentic AI frameworks that enable robots to perceive, reason, plan, and act.
+      - bullet: My research has been published in leading venues across machine learning and multi-agent AI (IEEE TNNLS, AAAI, AAMAS), robotics (IEEE T-RO, ICRA, IROS), and control (IEEE TAC, CDC, ACC, L4DC).
+      - bullet: Before joining Agile Robots, I worked on robot learning and teleoperation at the Munich Institute of Robotics and Machine Intelligence at TUM, and applied machine learning to public health research at the Robert Koch Institute. From public health to autonomous robots, the common thread in my work is turning promising machine learning methods into solutions for consequential real-world problems.
+      - bullet: These experiences reinforced my belief that meaningful innovation requires both scientific rigor and engineering depth. I enjoy working across the full path from framing research questions and developing rigorous methods to building and evaluating systems in practice. I also care deeply about education, mentoring, and exchanging ideas with passionate researchers, engineers, and students.
+
     Education:
       - institution: Technical University of Munich (TUM)
         location: Munich, Germany
         url: https://www.tum.de/
         area: Machine Learning and Control Theory
-        studyType: Ph.D.
+        degree: Ph.D.
         start_date: 2019-09-01
-        end_date: 2022-11-31
-        score: ""
+        end_date: 2022-11-30
 
       - institution: Harbin Engineering University
         location: Harbin, China
         url: https://english.hrbeu.edu.cn
         area: Control Science & Engineering
-        studyType: Ph.D.
+        degree: Ph.D.
         start_date: 2017-09-01
         end_date: 2019-08-31
-        score: ""
 
       - institution: Northeast Forestry University
         location: Harbin, China
         url: https://en.nefu.edu.cn
         area: Mechanical and Electrical Engineering
-        studyType: Master of Engineering
+        degree: Master of Engineering
         start_date: 2014-09-01
-        end_date: 2017-06-31
-        score: ""
+        end_date: 2017-06-30
 
     Experience:
       - company: Agile Robots SE
@@ -212,10 +198,12 @@ cv:
         summary: "Basic"
 
     Publications:
-      - summary: "See the full list on my [Publications page](../publications/)."
+      - name: Publications
+        summary: "See the full list on my [Publications page](../publications/)."
 
     Awards:
-      - summary: "See the full list on my [Awards page](../awards/)."
+      - name: Awards
+        summary: "See the full list on my [Awards page](../awards/)."
 
     # Volunteer:
     #   - company: People's Climate March
