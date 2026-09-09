@@ -24,7 +24,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Senior Research Scientist at [Agile Robots](https://www.agile-robots.com/en/) in Munich, working on world models and agentic frameworks for safe and reliable robotic manipulation.
+I am a Senior Research Scientist at [Agile Robots](https://www.agile-robots.com/en/) in Munich, working at the intersection of machine learning, robotics, and control. I develop Vision-Language-Action models, World Action Models, generative motion-planning methods, and agentic AI frameworks that enable robots to perceive, reason, plan, and act.
+My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
 
 Previously, I was a postdoctoral researcher at the [Munich Institute of Robotics and Machine Intelligence (MIRMI)](https://www.mirmi.tum.de/mirmi/startseite/), supervised by Prof. [Sami Haddadin](https://scholar.google.com/citations?user=H1v0ztEAAAAJ&hl=en) and Dr. [Hamid Sadeghian](https://scholar.google.com/citations?user=HGwI9iEAAAAJ&hl=en).
 Before that, in the aftermath of the pandemic, I joined the [Robert Koch Institute](https://www.rki.de/DE/Home/home_node.html) as a postdoctoral researcher, working on AI for public health research.
