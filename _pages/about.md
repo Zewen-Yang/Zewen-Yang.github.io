@@ -31,7 +31,7 @@ Previously, I was a postdoctoral researcher at the [Munich Institute of Robotics
 Before that, in the aftermath of the pandemic, I joined the [Robert Koch Institute](https://www.rki.de/DE/Home/home_node.html) as a postdoctoral researcher, working on AI for public health research.
 I did my Ph.D. research in Control Science & Engineering at the [Technical University of Munich](https://www.tum.de/) and [Harbin Engineering University](https://en.hrbeu.edu.cn/), where I was supervised by Prof. [Sandra Hirche](https://www.ce.cit.tum.de/en/itr/home/), Prof. [Zheping Yan](https://ieeexplore.ieee.org/author/37533860900), and Dr. [Stefan Sosnowski](https://scholar.google.com/citations?user=WGdQIlEAAAAJ&hl=en).
 
-My work lies at the intersection of **Machine Learning**, **Control**, and **Robotics**, driven by a strong interest in machine intelligence and the emerging technologies that make everyday life better and work more efficient.
+My work lies at the intersection of **Machine Learning**, **Control Theory**, **Multi-agent Systems** and **Robotics**, driven by a strong interest in machine intelligence and the emerging technologies that make everyday life better and work more efficient.
 I enjoy moving between building methods that hold up in the real world and exploring the deeper scientific questions behind them.
 I also care deeply about education and research, and find it especially rewarding to work alongside passionate people and ambitious students, growing together with them.
 
