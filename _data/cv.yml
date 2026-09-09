@@ -5,8 +5,7 @@ cv:
   email: zewenreal@gmail.com
   location: Plinganserstraße 134, München, Germany
   photo: ../assets/img/prof_pic_zewen.jpg
-  summary:
-    My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
+  summary: My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
 
     I am a Senior Research Scientist at Agile Robots in Munich, working at the intersection of machine learning, robotics, and control. I develop Vision-Language-Action models, World Action Models, generative motion-planning methods, and agentic AI frameworks that enable robots to perceive, reason, plan, and act.
 
@@ -161,7 +160,7 @@ cv:
     Skills:
       - name: AI Tools
         icon: fa-solid fa-robot
-        keywords: "Pi, Cursor, Codex, Perplexity"
+        keywords: "Pi, Cursor, Claude Code, Codex, Perplexity"
 
       - name: Programming & Markup Languages
         icon: fa-solid fa-code
