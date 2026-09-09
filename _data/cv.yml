@@ -6,12 +6,21 @@ cv:
   image: prof_pic_zewen.jpg
   photo: ../assets/img/prof_pic_zewen.jpg
   summary:
-    I am a Senior Research Scientist at Agile Robots, Munich, working on AI and Robotics, and a Ph.D. holder in Control Science & Engineering from the Technical University of Munich (TUM) and Harbin Engineering University.
-    My expertise lies in the fields of Multi-Agent System, Generative Models, Robotics, Bayesian Learning, and Control Theory.
+    My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
+
+    I am a Senior Research Scientist at Agile Robots in Munich, working at the intersection of machine learning, robotics, and control. I develop Vision-Language-Action models, World Action Models, generative motion-planning methods, and agentic AI frameworks that enable robots to perceive, reason, plan, and act.
+
+    My research has been published in leading venues across machine learning and multi-agent AI (IEEE TNNLS, AAAI, AAMAS), robotics (IEEE T-RO, ICRA, IROS), and control (IEEE TAC, CDC, ACC, L4DC).
+
+    Before joining Agile Robots, I worked on robot learning and teleoperation at the Munich Institute of Robotics and Machine Intelligence at TUM, and applied machine learning to public health research at the Robert Koch Institute. From public health to autonomous robots, the common thread in my work is turning promising machine learning methods into solutions for consequential real-world problems.
+
+    These experiences reinforced my belief that meaningful innovation requires both scientific rigor and engineering depth. I enjoy working across the full path from framing research questions and developing rigorous methods to building and evaluating systems in practice. I also care deeply about education, mentoring, and exchanging ideas with passionate researchers, engineers, and students.
 
   social_networks:
     - network: GitHub
       username: Zewen-Yang
+    - network: GitHub
+      username: Alwin-Yang
     - network: LinkedIn
       username: zewen-yang
 
@@ -59,8 +68,11 @@ cv:
         start_date: 2026-01-01
         end_date: present
         highlights:
-          - "Worked on agentic freamworks for robotic systems"
-          - "Investigated world models for manipulation tasks"
+          - "Own end-to-end development of expert VLA policies for an industrial dust-cup removal task on semi-humanoid robots with multi-camera perception, from data collection through on-robot deployment"
+          - "Built the post-processing and cleaning pipeline that turns several thousand real-robot demonstrations into training and benchmark datasets, with training on a GPU cluster and experiment tracking in Weights & Biases"
+          - "Train, benchmark, and deploy in-house and state-of-the-art VLA policies on robot hardware; the final policy reached 99% task success over 100 real-robot trials"
+          - "Led a 4-person cross-functional team to deliver a humanoid interaction system shown live at NVIDIA GTC 2026, owning the overall pipeline and motion planning with VLM agents decomposing high-level goals"
+          - "Defined the research roadmap on distributed flow-matching policies for robot motion generation and mentor 2 student researchers on an agentic framework for long-horizon manipulation tasks"
 
       - company: Munich Institute of Robotics and Machine Intelligence (MIRMI), TUM
         position: Postdoctoral Researcher

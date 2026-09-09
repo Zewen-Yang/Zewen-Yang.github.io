@@ -3,6 +3,10 @@
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 email: zewenreal@gmail.com # your email address
 github_username: Zewen-Yang # your GitHub username
+github_alwin:
+  logo: fa-brands fa-github
+  title: GitHub (Alwin-Yang)
+  url: https://github.com/Alwin-Yang
 # inspirehep_id: # Inspire HEP author ID
 # rss_icon: true # comment this line to hide the RSS icon
 linkedin_username: zewen-yang # your LinkedIn username (the part after linkedin.com/in/)
