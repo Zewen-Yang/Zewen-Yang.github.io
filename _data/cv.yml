@@ -1,9 +1,20 @@
 cv:
   name: Zewen Yang
   headline: Senior Research Scientist
+  label: Senior Research Scientist
   email: zewenreal@gmail.com
   location: Plinganserstraße 134, München, Germany
   photo: ../assets/img/prof_pic_zewen.jpg
+  summary:
+    My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
+
+    I am a Senior Research Scientist at Agile Robots in Munich, working at the intersection of machine learning, robotics, and control. I develop Vision-Language-Action models, World Action Models, generative motion-planning methods, and agentic AI frameworks that enable robots to perceive, reason, plan, and act.
+
+    My research has been published in leading venues across machine learning and multi-agent AI (IEEE TNNLS, AAAI, AAMAS), robotics (IEEE T-RO, ICRA, IROS), and control (IEEE TAC, CDC, ACC, L4DC).
+
+    Before joining Agile Robots, I worked on robot learning and teleoperation at the Munich Institute of Robotics and Machine Intelligence at TUM, and applied machine learning to public health research at the Robert Koch Institute. From public health to autonomous robots, the common thread in my work is turning promising machine learning methods into solutions for consequential real-world problems.
+
+    These experiences reinforced my belief that meaningful innovation requires both scientific rigor and engineering depth. I enjoy working across the full path from framing research questions and developing rigorous methods to building and evaluating systems in practice. I also care deeply about education, mentoring, and exchanging ideas with passionate researchers, engineers, and students.
 
   social_networks:
     - network: GitHub
@@ -14,13 +25,6 @@ cv:
       username: zewen-yang
 
   sections:
-    Summary:
-      - bullet: My mission is to turn advances in machine learning into safe, reliable systems that solve real-world problems.
-      - bullet: I am a Senior Research Scientist at Agile Robots in Munich, working at the intersection of machine learning, robotics, and control. I develop Vision-Language-Action models, World Action Models, generative motion-planning methods, and agentic AI frameworks that enable robots to perceive, reason, plan, and act.
-      - bullet: My research has been published in leading venues across machine learning and multi-agent AI (IEEE TNNLS, AAAI, AAMAS), robotics (IEEE T-RO, ICRA, IROS), and control (IEEE TAC, CDC, ACC, L4DC).
-      - bullet: Before joining Agile Robots, I worked on robot learning and teleoperation at the Munich Institute of Robotics and Machine Intelligence at TUM, and applied machine learning to public health research at the Robert Koch Institute. From public health to autonomous robots, the common thread in my work is turning promising machine learning methods into solutions for consequential real-world problems.
-      - bullet: These experiences reinforced my belief that meaningful innovation requires both scientific rigor and engineering depth. I enjoy working across the full path from framing research questions and developing rigorous methods to building and evaluating systems in practice. I also care deeply about education, mentoring, and exchanging ideas with passionate researchers, engineers, and students.
-
     Education:
       - institution: Technical University of Munich (TUM)
         location: Munich, Germany
