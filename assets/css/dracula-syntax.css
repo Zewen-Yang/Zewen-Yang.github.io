@@ -75,6 +75,7 @@ div.language-plaintext.highlighter-rouge pre code {
 .highlight .vi,
 .highlight .nx,
 .highlight .nl,
+.highlight .nn,
 .highlight .py,
 .highlight .w {
   color: var(--dracula-foreground);
@@ -117,7 +118,8 @@ div.language-plaintext.highlighter-rouge pre code {
 
 /* Section 10 — Punctuation: SeparatorsReferencesOrAccessors,
    StringInterpolationOperators (Pink) */
-.highlight .o {
+.highlight .o,
+.highlight .ow {
   color: var(--dracula-pink);
 }
 
@@ -134,10 +136,12 @@ div.language-plaintext.highlighter-rouge pre code {
 
 /* Section 13 — Strings: String (Yellow) */
 .highlight .s,
+.highlight .sa,
 .highlight .sb,
 .highlight .dl,
 .highlight .s2,
 .highlight .sh,
+.highlight .si,
 .highlight .s1 {
   color: var(--dracula-yellow);
 }
