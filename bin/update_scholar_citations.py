@@ -1,10 +1,61 @@
 #!/usr/bin/env python
 
+import logging
 import os
 import sys
 import yaml
 from datetime import datetime
-from scholarly import scholarly
+from scholarly import scholarly, ProxyGenerator
+
+
+def configure_proxy() -> None:
+    """Route scholarly through a proxy when one is configured.
+
+    Google Scholar returns 403 to GitHub Actions runner IPs, and scholarly's 403
+    handler retries forever (sleeping 60-120s between attempts) without counting
+    against ``set_retries``. A direct connection from CI therefore never finishes
+    on its own; it only dies when the workflow's ``timeout`` kills it.
+
+    * ``SCRAPERAPI_KEY`` — use ScraperAPI (https://www.scraperapi.com/), which
+      scholarly supports natively. Set it as a repository secret for the
+      ``update-citations`` workflow. This is the reliable option.
+    * ``SCHOLARLY_FREE_PROXIES=1`` — rotate through free public proxies. Zero cost
+      but slow and frequently broken; only a best-effort fallback.
+
+    With neither set (e.g. running locally from a residential IP) scholarly talks
+    to Scholar directly, which is what worked before.
+    """
+    scraperapi_key = os.environ.get("SCRAPERAPI_KEY", "").strip()
+    use_free_proxies = os.environ.get("SCHOLARLY_FREE_PROXIES", "").strip().lower() in ("1", "true", "yes")
+
+    if scraperapi_key:
+        pg = ProxyGenerator()
+        try:
+            proxy_ok = pg.ScraperAPI(scraperapi_key)
+        except Exception as e:
+            # scholarly parses the /account response as JSON; an invalid key yields a
+            # non-JSON body and the error escapes as a bare JSONDecodeError.
+            proxy_ok = False
+            print(f"ScraperAPI setup raised {type(e).__name__}: {e}")
+        if not proxy_ok:
+            print("SCRAPERAPI_KEY is set but ScraperAPI rejected it (invalid key or quota exhausted).")
+            sys.exit(1)
+        # Pass the same generator as the secondary proxy too; otherwise scholarly
+        # fetches the author page through free proxies first and only falls back
+        # to ScraperAPI after those time out.
+        scholarly.use_proxy(pg, pg)
+        print("Using ScraperAPI proxy for Google Scholar requests.")
+    elif use_free_proxies:
+        pg = ProxyGenerator()
+        try:
+            pg.FreeProxies()
+        except Exception as e:
+            print(f"Could not find a working free proxy: {e}")
+            sys.exit(1)
+        scholarly.use_proxy(pg, pg)
+        print("Using free rotating proxies for Google Scholar requests.")
+    else:
+        print("No proxy configured; connecting to Google Scholar directly.")
 
 
 def load_scholar_user_id() -> str:
@@ -42,6 +93,7 @@ def get_scholar_citations() -> None:
     today = datetime.now().strftime("%Y-%m-%d")
 
     # Check if the output file was already updated today
+    existing_data = None
     if os.path.exists(OUTPUT_FILE):
         try:
             with open(OUTPUT_FILE, "r") as f:
@@ -62,6 +114,7 @@ def get_scholar_citations() -> None:
 
     citation_data = {"metadata": {"last_updated": today}, "papers": {}}
 
+    configure_proxy()
     scholarly.set_timeout(15)
     scholarly.set_retries(3)
     try:
@@ -125,6 +178,13 @@ def get_scholar_citations() -> None:
 
 
 if __name__ == "__main__":
+    # Surface scholarly's own log lines (403 / captcha / proxy retries) so a CI run
+    # that gets killed by `timeout` still leaves evidence of *why* it was stuck.
+    # Line-buffer stdout: without this, output sitting in the buffer is lost when
+    # `timeout` sends SIGTERM.
+    sys.stdout.reconfigure(line_buffering=True)
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s scholarly: %(message)s", stream=sys.stdout)
+    scholarly.set_logger(True)
     try:
         get_scholar_citations()
     except Exception as e:

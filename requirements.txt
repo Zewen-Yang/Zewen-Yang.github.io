@@ -6,3 +6,7 @@ scholarly
 # Without this pin a fresh `pip install -r requirements.txt` makes bin/update_scholar_citations.py
 # crash on import (ModuleNotFoundError) before it ever reaches Google Scholar.
 bibtexparser<2
+# scholarly 1.7.x builds proxied sessions with `httpx.Client(proxies=...)`, a keyword httpx 0.28
+# removed. Any proxy mode (ScraperAPI / FreeProxies) then dies with
+# `TypeError: __init__() got an unexpected keyword argument 'proxies'`; direct mode is unaffected.
+httpx<0.28

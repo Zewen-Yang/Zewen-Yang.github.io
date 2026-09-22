@@ -45,11 +45,30 @@ jobs:
       - name: Run citation update script
         id: run_citation_update
         shell: bash
+        # Google Scholar returns 403 to GitHub-hosted runner IPs, and scholarly then
+        # retries forever, so a direct fetch from CI cannot succeed. Add a repository
+        # secret named SCRAPERAPI_KEY (https://www.scraperapi.com/) to route the
+        # requests through a reliable proxy; bin/update_scholar_citations.py picks it
+        # up. Without the secret the script falls back to free public proxies, which
+        # work some of the time.
+        env:
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: |
           set +e
+          if [ -n "$SCRAPERAPI_KEY" ]; then
+            # Proxied requests are slow (ScraperAPI uses 60s timeouts per request).
+            run_timeout=600
+            echo "🔐 SCRAPERAPI_KEY is configured; using ScraperAPI proxy (timeout ${run_timeout}s)."
+          else
+            # Best effort: rotate through free public proxies. A direct fetch would
+            # only spin on 403 retries until killed.
+            export SCHOLARLY_FREE_PROXIES=1
+            run_timeout=300
+            echo "⚠️ No SCRAPERAPI_KEY secret; trying free public proxies (timeout ${run_timeout}s)."
+          fi
           echo "🚀 Running citation update script (single attempt)..."
           start_time=$(date)
-          timeout 90 python bin/update_scholar_citations.py
+          timeout "$run_timeout" python bin/update_scholar_citations.py
           status=$?
           end_time=$(date)
           set -e
@@ -61,9 +80,17 @@ jobs:
           echo "❌ Citation update script failed with exit code $status (started at $start_time, ended at $end_time)."
           {
             echo "❌ Citation update script failed with exit code $status."
+            if [ $status -eq 124 ]; then
+              echo "(124 = killed by \`timeout ${run_timeout}\`; see the step log above for scholarly's last 403/captcha messages.)"
+            fi
             echo ""
             echo "\`_data/citations.yml\` is now stale — the publication badges keep showing the last committed counts."
-            echo "Google Scholar commonly blocks GitHub Actions runners; refresh locally with \`python bin/update_scholar_citations.py\` and commit the result."
+            if [ -z "$SCRAPERAPI_KEY" ]; then
+              echo ""
+              echo "Google Scholar blocks GitHub Actions runner IPs; this run used best-effort free proxies and they did not get through."
+              echo "For a reliable run add a \`SCRAPERAPI_KEY\` repository secret (Settings → Secrets and variables → Actions),"
+              echo "or refresh locally with \`python bin/update_scholar_citations.py\` and commit the result."
+            fi
           } >> $GITHUB_STEP_SUMMARY
           exit $status
 

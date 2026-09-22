@@ -87,6 +87,21 @@ python3 bin/fill_scholar_ids.py --write   # insert google_scholar_id into papers
 
 Weak matches are skipped on purpose (a wrong id links the badge to the wrong paper).
 
+### Gotcha: the `Update Google Scholar Citations` action always fails
+
+Google Scholar returns 403 to GitHub-hosted runner IPs, and `scholarly` retries that
+forever, so a direct fetch from CI dies on `timeout` (exit code 124). The workflow
+therefore never fetches directly:
+
+- With a repository secret `SCRAPERAPI_KEY` ([ScraperAPI](https://www.scraperapi.com/))
+  it routes through ScraperAPI — the reliable option.
+- Without the secret it falls back to free public proxies (`SCHOLARLY_FREE_PROXIES=1`);
+  zero cost and it does work some of the time, but expect intermittent red runs.
+- Running locally (residential IP) always works; commit `_data/citations.yml` afterwards.
+
+Keep the `httpx<0.28` and `bibtexparser<2` pins in `requirements.txt`: without them
+`scholarly` 1.7.x either fails to import or crashes as soon as any proxy mode is used.
+
 ### Gotcha: importing from RIS (`TY  - JOUR ...`)
 
 A RIS export is **not** BibTeX. Convert it (the `TY  - JOUR` / `AU  -` / `TI  -` block)
