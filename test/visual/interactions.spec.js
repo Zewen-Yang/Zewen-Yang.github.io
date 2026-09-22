@@ -56,7 +56,7 @@ test("repositories page renders repo cards from local data without external imag
   expect(await repoCards.count()).toBeGreaterThan(0);
 
   // Cards are built from _data/repo_cards.yml, so an outage of a stats service cannot blank the page.
-  const externalStatImages = page.locator('img[src*="github-readme-stats"], img[src*="github-profile-trophy"]');
+  const externalStatImages = page.locator('img[src*="github-readme-stats"], img[src*="github-profile-trophy"], img[src*="github-stats-extended"]');
   expect(await externalStatImages.count()).toBe(0);
 });
 
