@@ -87,7 +87,10 @@ python3 bin/fill_scholar_ids.py --write   # insert google_scholar_id into papers
 
 Weak matches are skipped on purpose (a wrong id links the badge to the wrong paper).
 
-### Gotcha: the `Update Google Scholar Citations` action always fails
+### Gotcha: the `Update Google Scholar Citations` action is manual-only
+
+Its schedule is turned off; refresh citations locally (commands above) and commit.
+The workflow can still be started by hand from the Actions tab. Background:
 
 Google Scholar returns 403 to GitHub-hosted runner IPs, and `scholarly` retries that
 forever, so a direct fetch from CI dies on `timeout` (exit code 124). The workflow

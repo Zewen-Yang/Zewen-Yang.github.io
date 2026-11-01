@@ -1,10 +1,10 @@
 name: Update Google Scholar Citations
 
 on:
-  schedule:
-    - cron: "0 0 * * 1" # Monday
-    - cron: "0 0 * * 3" # Wednesday
-    - cron: "0 0 * * 5" # Friday
+  # Scheduled runs are disabled: Google Scholar blocks GitHub-hosted runners and
+  # the free-proxy fallback rarely gets through. Refresh locally with
+  # `python bin/update_scholar_citations.py` instead. To re-enable, add a
+  # SCRAPERAPI_KEY secret and restore a `schedule:` trigger here.
   workflow_dispatch:
 
 jobs:
