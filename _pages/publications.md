@@ -8,8 +8,14 @@ _styles: |
   .pub-actions {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.6rem;
     margin: 0 0 1.25rem;
+  }
+  /* The filter box sits on the right of the gallery button and drops below it on narrow screens. */
+  .pub-actions .bibsearch-form-input {
+    flex: 1 1 220px;
+    margin: 0 0 0 auto;
   }
   .pub-actions a.pub-action {
     display: inline-flex;
@@ -60,11 +66,9 @@ _styles: |
   <a class="pub-action" href="https://zewen-yang.github.io/PubGallery/" target="_blank" rel="noopener">
     <i class="fa-solid fa-book-open" aria-hidden="true"></i> Explore the 3D Publication Gallery <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
   </a>
+  <!-- Bibsearch Feature -->
+  {% include bib_search.liquid %}
 </div>
-
-<!-- Bibsearch Feature -->
-
-{% include bib_search.liquid %}
 
 <div class="publications" id="english-papers">
 
