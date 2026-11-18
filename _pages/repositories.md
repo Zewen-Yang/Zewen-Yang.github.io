@@ -4,7 +4,7 @@ permalink: /repositories/
 title: Repositories
 description: Selected GitHub repositories.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 {% assign cards = site.data.repo_cards %}
