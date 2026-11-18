@@ -9,12 +9,12 @@ nav_order: 8
 
 ## Editorial and Chairing
 
-| Date           | Role                                                              | Venue                                                                                            |
-| :------------- | :---------------------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
-| 2026           | Associate Editor, Conference Editorial Board                      | IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026), Pittsburgh, USA |
-| 20–27 Jan 2026 | Session Co-Chair, "Machine Learning 16" and "Machine Learning 23" | The 40th Annual AAAI Conference on Artificial Intelligence, Singapore                            |
-| 28–31 Jul 2024 | Session Co-Chair, "Data-Driven Modeling and Control"              | The 43rd Chinese Control Conference, Kunming, China                                              |
-| 26–28 Jul 2021 | Session Co-Chair, "Multi-Agent Systems and Distributed Control"   | The 40th Chinese Control Conference, Shanghai, China                                             |
+| Year | Role                                                              | Venue                                                                                            |
+| :--- | :---------------------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
+| 2026 | Associate Editor, Conference Editorial Board                      | IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026), Pittsburgh, USA |
+| 2026 | Session Co-Chair, "Machine Learning 16" and "Machine Learning 23" | The 40th Annual AAAI Conference on Artificial Intelligence, Singapore                            |
+| 2024 | Session Co-Chair, "Data-Driven Modeling and Control"              | The 43rd Chinese Control Conference, Kunming, China                                              |
+| 2021 | Session Co-Chair, "Multi-Agent Systems and Distributed Control"   | The 40th Chinese Control Conference, Shanghai, China                                             |
 
 ## Academic Review
 
