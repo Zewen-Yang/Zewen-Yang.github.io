@@ -21,7 +21,7 @@ nav_order: 8
 ### Machine Learning and Artificial Intelligence
 
 | Venue                                                                 | Year |
-| :-------------------------------------------------------------------- | :--- |
+| :-------------------------------------------------------------------- | ---: |
 | International Conference on Learning Representations (ICLR)           | 2026 |
 | Conference on Neural Information Processing Systems (NeurIPS)         | 2026 |
 | The Association for the Advancement of Artificial Intelligence (AAAI) | 2026 |
@@ -32,25 +32,25 @@ nav_order: 8
 
 ### Robotics and Automation
 
-| Venue                                                           | Year      |
-| :-------------------------------------------------------------- | :-------- |
-| IEEE Transactions on Robotics (T-RO)                            | 2026      |
-| IEEE International Conference on Robotics and Automation (ICRA) | 2026      |
-| IEEE/ASME Transactions on Mechatronics (TMECH)                  | 2026      |
+| Venue                                                           |      Year |
+| :-------------------------------------------------------------- | --------: |
+| IEEE Transactions on Robotics (T-RO)                            |      2026 |
+| IEEE International Conference on Robotics and Automation (ICRA) |      2026 |
+| IEEE/ASME Transactions on Mechatronics (TMECH)                  |      2026 |
 | IEEE Transactions on Automation Science and Engineering (T-ASE) | 2024–2025 |
 
 ### Control, Systems and Engineering
 
-| Venue                                                                | Year            |
-| :------------------------------------------------------------------- | :-------------- |
-| IFAC World Congress                                                  | 2026            |
-| IEEE Transactions on Industrial Informatics (TII)                    | 2026            |
+| Venue                                                                |            Year |
+| :------------------------------------------------------------------- | --------------: |
+| IFAC World Congress                                                  |            2026 |
+| IEEE Transactions on Industrial Informatics (TII)                    |            2026 |
 | IEEE/CAA Journal of Automatica Sinica (JAS)                          | 2021, 2025–2026 |
-| IEEE European Control Conference (ECC)                               | 2023, 2026      |
-| IEEE Transactions on Automatic Control (TAC)                         | 2025            |
-| IEEE Transactions on Systems, Man, and Cybernetics: Systems (TSMC-S) | 2025            |
-| Scientific Reports (Nature Portfolio)                                | 2023–2024       |
-| Measurement Science and Technology                                   | 2024            |
-| IEEE Control Systems Letters (L-CSS)                                 | 2021            |
-| IEEE American Control Conference (ACC)                               | 2021            |
-| Annual Conference of the IEEE Industrial Electronics Society (IECON) | 2020            |
+| IEEE European Control Conference (ECC)                               |      2023, 2026 |
+| IEEE Transactions on Automatic Control (TAC)                         |            2025 |
+| IEEE Transactions on Systems, Man, and Cybernetics: Systems (TSMC-S) |            2025 |
+| Scientific Reports (Nature Portfolio)                                |       2023–2024 |
+| Measurement Science and Technology                                   |            2024 |
+| IEEE Control Systems Letters (L-CSS)                                 |            2021 |
+| IEEE American Control Conference (ACC)                               |            2021 |
+| Annual Conference of the IEEE Industrial Electronics Society (IECON) |            2020 |
