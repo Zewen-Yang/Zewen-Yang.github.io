@@ -208,6 +208,10 @@ cv:
       - name: Awards
         summary: "See the full list on my [Awards page](../awards/)."
 
+    Academic Services:
+      - name: Academic Services
+        summary: "See the full list on my [Academic Services page](../services/)."
+
     # Volunteer:
     #   - company: People's Climate March
     #     position: Lead Organizer

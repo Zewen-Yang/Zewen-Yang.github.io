@@ -10,6 +10,6 @@ children:
   - title: Academic Services
     permalink: /services/
   - title: divider
-  - title: News
+  - title: All News
     permalink: /news/
 ---
