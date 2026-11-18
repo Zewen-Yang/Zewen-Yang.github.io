@@ -209,8 +209,8 @@ cv:
         summary: "See the full list on my [Awards page](../awards/)."
 
     Academic Services:
-      - name: Academic Services
-        summary: "See the full list on my [Academic Services page](../services/)."
+      # Not a section name the CV plugin knows, so it goes through the generic renderer, which only reads `bullet`.
+      - bullet: '<span class="ml-1 ml-md-4">See the full list on my <a href="../services/">Academic Services page</a>.</span>'
 
     # Volunteer:
     #   - company: People's Climate March
