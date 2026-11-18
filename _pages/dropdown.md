@@ -7,6 +7,8 @@ dropdown: true
 children:
   - title: Awards
     permalink: /awards/
+  - title: Academic Services
+    permalink: /services/
   - title: divider
   - title: News
     permalink: /news/
